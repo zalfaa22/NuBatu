@@ -1,0 +1,133 @@
+@media (max-width: 1440px) {
+.bungkus-donatur{
+    padding: 40px;
+    background-color: #EDF6F0;
+}
+.donatur{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.kiri{
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    gap: 10px;
+}
+.kembali{
+    font-size: 16px;
+    color: #404040;
+}
+.simpan{
+    width: 174px;
+    height: 49px;
+    border: 1.5px solid #BFBFBF;
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: transparent;
+}
+.verif{
+    width: 174px;
+    height: 49px;
+    border: 2px solid #BFBFBF;
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: rgba(7, 141, 65, 0.8);
+    border: none;
+    color: white;
+}
+.info{
+    width: 142px;
+    height: 44px;
+    border-radius: 10px;
+    border: 2px solid #009B4C;
+}
+.umum{
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    width: 265px;
+    margin-top: 30px;
+}
+.umum p{
+    color: #404040;
+    font-size: 14px;
+}
+
+.putih{
+    background-color: white;
+    padding: 30px;
+    margin-top: 30px;
+    border-radius: 10px;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+}
+.judul{
+    font-size: 20px;
+    color: black;
+}
+.nam-prog{
+    margin-top: -10px;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 5px; */
+}
+
+
+.form{
+    height: auto;
+    width: 50%;
+}
+.form-label{
+    font-size: 14px;
+    color: #404040;
+}
+.custom-icon {
+    border-right: none; /* Remove left border */
+    background-color: white;
+}
+
+
+
+
+
+
+.gambar{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 20px;
+    height: 420px;
+}
+.inisiator{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto;
+}
+.gambar h1{
+    font-size: 20px;
+    color: black;
+    font-weight: bold;
+}
+.gambar h2{
+    font-size: 16px;
+    color: #404040;
+}
+.gambar h3{
+    display: flex;
+    align-items: end;
+    justify-content: start;
+    gap: 20px;
+}
+.gambar h3 img{
+    width: 56px;
+}
+.gambar h3 p{
+    font-size: 16px;
+    color: black;
+}
+
+}
