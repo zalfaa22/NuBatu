@@ -43,5 +43,6 @@ export default function Beranda() {
         </div>
       </div>
     </div>
+    </div>
   );
 }
