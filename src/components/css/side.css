@@ -1,0 +1,11 @@
+.list-group a:hover {
+    background-color: blue;
+    color: white;
+    cursor: pointer;
+}
+
+/* @media (min-width: 320px) {
+    .sidebar {
+        position: absolute !important;
+    }
+} */
