@@ -1,5 +1,7 @@
 import React from 'react'
 import "./css/side.css"
+import "bootstrap/js/dist/dropdown";
+import "bootstrap/js/dist/collapse"
 
 function side() {
   return (
@@ -34,7 +36,7 @@ function side() {
                     data-bs-parent="#parentM"
                   >
                     <li class="nav-item">
-                      <a class="nav-link text-white" href="#" aria-current="page">
+                      <a class="nav-link text-white" href="/koin" aria-current="page">
                         <img src="../assets/sidebar/dot-icon.svg"/><span className="ms-2">Campaign Program</span>
                       </a>
                     </li>
@@ -63,7 +65,7 @@ function side() {
                     data-bs-parent="#parentM"
                   >
                     <li class="nav-item">
-                      <a class="nav-link text-white" href="#" aria-current="page">
+                      <a class="nav-link text-white" href="/berita" aria-current="page">
                         <img src="../assets/sidebar/dot-icon.svg"/><span className="ms-2">Berita</span>
                       </a>
                     </li>
