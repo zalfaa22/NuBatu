@@ -1,0 +1,23 @@
+.nav.collapse {
+    flex-direction: column !important;
+  }
+
+  .custom-col-2 {
+    flex-basis: 200px; /* Sesuaikan panjang kolom sesuai kebutuhan */
+    height: 100vh;
+  }
+
+#parentM li a:hover {
+    background-color: #078D41;
+}
+.arrow-right-icon {
+  margin-left: auto;
+}
+
+
+@media (min-width: 320px) {
+    .custom-col-2 {
+        flex-basis: 110px; /* Sesuaikan panjang kolom sesuai kebutuhan */
+        height: 100vh;
+      }
+}
