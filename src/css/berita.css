@@ -18,14 +18,16 @@
 }
 
 
-.table-container {
+.table-container-berita {
     overflow-x: auto;
     white-space: nowrap; /* Prevent text wrapping */
+    margin-top: 0;
   }
-.table-container {
+/* .table-container-berita {
     overflow-x: auto;
-    max-width: 100%; /* Adjust the maximum width as needed */
-  }
+    max-width: 100%; */
+     /* Adjust the maximum width as needed */
+  /* } */
 
 button.edit-btn {
     background-color: transparent;

@@ -22,7 +22,7 @@ function side() {
 
                 <li class="nav-item text-white my-1">
                   <a
-                    href="/koin"
+                    href="#submenu"
                     class="nav-link"
                     data-bs-toggle="collapse"
                     aria-current="page"

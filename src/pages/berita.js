@@ -35,18 +35,18 @@ export default function Berita() {
         >
           <Nav Toggle={Toggle} />
           <div className="px-3 px-md-4 py-md-4">
-            <div className="mb-4">
+            <div className="mb-5">
               <div className="d-flex justify-content-between">
                 <h2 className="fs-2 fw-bold">Berita</h2>
                 <div className="d-flex">
-                    <Button href="/addBerita" variant="success" size="lg" className="mt-1 me-3">Tambah Program
+                    <Button href="/addBerita" variant="success" size="lg" className="mt-1 me-3">Tambah Berita
                     <img src='../../assets/berita/plus.svg' alt='add' className="ms-2" />
                     </Button>{' '}
                 <img src="../assets/berita/profile.svg" />
                 </div>
               </div>
             </div>
-            <div className="mb-5">
+            <div className="mb-0">
               <div className="d-flex justify-content-between">
                 <div>
                   <Button variant="outline-success fs-6 fw-semibold text-black" className="berita-btn">
@@ -73,7 +73,7 @@ export default function Berita() {
             </div>
             <div className="">
 
-            <div class="table-container">
+            <div class="table-container-berita">
 <table class="table custom-table">
                 <thead>
                   <tr className="title">
