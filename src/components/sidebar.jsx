@@ -17,9 +17,10 @@ function side() {
                     <span className="ms-2 text-white">Beranda</span>
                   </a>
                 </li>
+
                 <li class="nav-item text-white my-1">
                   <a
-                    href="#submenu"
+                    href="/koin"
                     class="nav-link"
                     data-bs-toggle="collapse"
                     aria-current="page"
@@ -34,7 +35,7 @@ function side() {
                     data-bs-parent="#parentM"
                   >
                     <li class="nav-item">
-                      <a class="nav-link text-white" href="#" aria-current="page">
+                      <a class="nav-link text-white" href="/koin" aria-current="page">
                         <img src="../assets/sidebar/dot-icon.svg"/><span className="ms-2">Campaign Program</span>
                       </a>
                     </li>
