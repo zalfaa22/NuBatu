@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Berita from "./pages/berita"; 
+import AddBerita from "./pages/addBerita";
 import login from "./pages/login";
 import Beranda from "./pages/beranda";
 import Koin from "./pages/koin";
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" Component={Beranda} />
         <Route path="/koin" Component={Koin} />
         <Route path="/berita" Component={Berita} />
+        <Route path="/addBerita" Component={AddBerita} />
       </Routes>
     </div>
   );

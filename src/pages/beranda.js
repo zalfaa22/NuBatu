@@ -39,7 +39,7 @@ export default function Beranda() {
         <button>Read More</button>
       </div>
       
-      <img src='../../assets/NU.png' alt='NU' />
+      <img className="img-nu" src='../../assets/NU.png' alt='NU' />
         </div>
       </div>
     </div>
