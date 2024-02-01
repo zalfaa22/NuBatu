@@ -1,19 +1,19 @@
-@media (min-width: 1024px) {
+/* Define a default height */
+.login-img {
+    height: 100%;
+  }
+  
+  /* Adjust height for smaller screens */
+  @media screen and (max-width: 768px) {
     .login-img {
-        width: 100%;
-        height: 100%;
+      height: 300px;
     }
-}
-
-
-@media (min-width: 768px) {
+  }
+  
+  /* Adjust height for even smaller screens */
+  @media screen and (max-width: 480px) {
     .login-img {
-        width: 100%;
-        height: 50vh;
+      height: 200px;
     }
-}
-
-
-@media (min-width: 320px) {
-    
-}
+  }
+  

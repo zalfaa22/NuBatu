@@ -41,8 +41,8 @@
         border: 2px solid #078D41;
         padding-bottom: 20px;
     }
-    img{
-        width: auto;
+    .img-nu {
+        width: 400px;
     }
 
 }
@@ -98,8 +98,8 @@
         border: 2px solid #078D41;
         padding-bottom: 5px;
     }
-    img{
-        width: auto;
+    .img-nu{
+        width: 300px;
     }
 }
 
@@ -152,7 +152,7 @@
         border: 2px solid #078D41;
         padding-bottom: 5px;
     }
-    img {
+    .img-nu {
         width: 100%;
         margin-top: 50px;
     }
