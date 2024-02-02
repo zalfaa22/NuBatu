@@ -71,12 +71,12 @@ function side() {
                       </a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link text-white" href="#">
+                      <a class="nav-link text-white" href="/artikel">
                       <img src="../assets/sidebar/dot-icon.svg"/><span className="ms-2">Artikel</span>
                       </a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link text-white" href="#">
+                      <a class="nav-link text-white" href="/event">
                       <img src="../assets/sidebar/dot-icon.svg"/><span className="ms-2">Event</span>
                       </a>
                     </li>
@@ -100,7 +100,7 @@ function side() {
                   </a>
                 </li>
                 <li class="nav-item text-white my-1">
-                  <a href="#" class="nav-link" aria-current="page">
+                  <a href="/pengaturan" class="nav-link" aria-current="page">
                     <img src="../assets/sidebar/pengaturan-icon.svg" />
                     <span className="ms-2 text-white">Pengaturan</span>
                   </a>

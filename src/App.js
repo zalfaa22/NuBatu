@@ -5,8 +5,11 @@ import Beranda from "./pages/beranda";
 import Koin from "./pages/koin";
 import tabel from "./components/tabel";
 import Donatur from "./pages/donatur";
-import Berita from "./pages/berita"; 
-import AddBerita from "./pages/addBerita";
+import Berita from "./pages/konten/berita"; 
+import AddBerita from "./pages/konten/addBerita";
+import Artikel from "./pages/konten/artikel";
+import Event from "./pages/konten/event";
+import Pengaturan from "./pages/pengaturan";
 import "bootstrap-icons/font/bootstrap-icons.css"
 
 
@@ -21,6 +24,9 @@ function App() {
         <Route path="/donatur" Component={Donatur} />
         <Route path="/berita" Component={Berita} />
         <Route path="/addBerita" Component={AddBerita} />
+        <Route path="/artikel" Component={Artikel} />
+        <Route path="/event" Component={Event} />
+        <Route path="/pengaturan" Component={Pengaturan} />
       </Routes>
     </div>
   );

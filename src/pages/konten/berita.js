@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import Sidebar from "../components/sidebar";
-import Nav from "../components/nav";
+import Sidebar from "../../components/sidebar";
+import Nav from "../../components/nav";
 import Button from "react-bootstrap/Button";
-import "../css/berita.css";
+import "../../css/berita.css";
 
 export default function Berita() {
   const [toggle, setToggle] = useState(true);
@@ -34,10 +34,10 @@ export default function Berita() {
           style={{ backgroundColor: "#EDF6F0" }}
         >
           <Nav Toggle={Toggle} />
-          <div className="px-3 px-md-4 py-md-4">
+          <div className="px-3 px-md-5 py-md-4">
             <div className="mb-5">
               <div className="d-flex justify-content-between">
-                <h2 className="fs-2 fw-bold">Berita</h2>
+                <h2 className="fw-bold page-title">Berita</h2>
                 <div className="d-flex">
                     <Button href="/addBerita" variant="success" size="lg" className="mt-1 me-3">Tambah Berita
                     <img src='../../assets/berita/plus.svg' alt='add' className="ms-2" />
