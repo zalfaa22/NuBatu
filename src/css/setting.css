@@ -1,0 +1,46 @@
+.page-title {
+    font-size: 27px !important;
+}
+.setting-title {
+    font-size: 19px;
+}
+.text1-set {
+    font-size: 15px;
+}
+.text2-set {
+    font-size: 12px;
+    color: #404040;
+}
+
+@media (min-width: 425px) {
+    .page-title {
+        font-size: 36px !important;
+    }
+    .setting-title {
+        font-size: 25px;
+    }
+    .text1-set {
+        font-size: 20px;
+    }
+    .text2-set {
+        font-size: 14px;
+        color: #404040;
+    }
+}
+
+@media (min-width: 768px) {
+    .page-title {
+        font-size: 36px !important;
+    }
+    .setting-title {
+        font-size: 28px;
+    }
+    .text1-set {
+        font-size: 20px;
+    }
+    .text2-set {
+        font-size: 14px;
+        color: #404040;
+    }
+}
+
