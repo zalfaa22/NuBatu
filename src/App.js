@@ -17,8 +17,8 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/login" Component={login} />
-        <Route path="/" Component={Beranda} />
+        <Route path="/" Component={login} />
+        <Route path="/beranda" Component={Beranda} />
         <Route path="/koin" Component={Koin} />
         <Route path="/tabel" Component={tabel} />
         <Route path="/donatur" Component={Donatur} />

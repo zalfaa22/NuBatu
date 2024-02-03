@@ -1,5 +1,15 @@
 .App {
   text-align: center;
+  background-color: #EDF6F0 !important;
+}
+
+html {
+  background-color: #EDF6F0 !important;
+
+}
+
+body {
+  min-height: 100%;
 }
 
 .App-logo {
