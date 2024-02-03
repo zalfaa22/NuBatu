@@ -59,3 +59,46 @@ button.publish-btn {
     font-weight: 600;
     padding: 3px;
 }
+
+/* EVENT */
+.event-modal {
+    width: 50%;
+    padding: 2rem;
+}
+.event-modal1 {
+    font-size: 19px;
+}
+.event-modal2 {
+    font-size: 12px;
+    font-weight: medium;
+}
+button.btn-modal1 {
+    font-size: 8px;
+    color: black;
+}
+button.btn-modal2 {
+    font-size: 8px;
+    color: white;
+}
+
+
+@media (min-width: 768px) {
+    .event-modal {
+        max-width: 100%;
+    }
+    .event-modal1 {
+        font-size: 32px;
+    }
+    .event-modal2 {
+        font-size: 14px;
+        font-weight: medium;
+    }
+    button.btn-modal1 {
+        font-size: 14px;
+        color: black;
+    }
+    button.btn-modal2 {
+        font-size: 14px;
+        color: white;
+    }
+}
