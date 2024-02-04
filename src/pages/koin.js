@@ -1,13 +1,8 @@
 import React, { useState } from "react";
-import Sidebar from "../components/sidebar";
 import "../css/koin.css";
 
 export default function Koin() {
   return (
-    <div className="">
-      <div>
-        <Sidebar />
-      </div>
       <div className="content" style={{ backgroundColor: "#EDF6F0" }}>
         <div className="luar">
           <div className="koin">
@@ -179,6 +174,5 @@ export default function Koin() {
           </table>
         </div>
       </div>
-    </div>
   );
 }

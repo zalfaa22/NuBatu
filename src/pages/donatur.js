@@ -1,14 +1,9 @@
 import React, { useState } from "react";
-import Sidebar from "../components/sidebar";
 import "../css/donatur.css";
 import Tabel from "../components/tabel";
 
 export default function Donatur() {
   return (
-    <div className="">
-      <div>
-        <Sidebar />
-      </div>
       <div className="content" style={{ backgroundColor: "#EDF6F0" }}>
         <div className="bungkus-donatur">
           <div className="detail">
@@ -94,6 +89,5 @@ export default function Donatur() {
           </div>
         </div>
       </div>
-    </div>
   );
 }

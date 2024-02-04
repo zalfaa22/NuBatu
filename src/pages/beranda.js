@@ -1,13 +1,8 @@
 import React, { useState } from "react";
-import Sidebar from "../components/sidebar";
 import "../css/beranda.css";
 
 export default function Beranda() {
   return (
-    <div className="">
-      <div>
-        <Sidebar />
-      </div>
       <div className="content">
         <div className="cover">
           <div className="bungkus">
@@ -28,6 +23,5 @@ export default function Beranda() {
           <img className="img-nu" src="../../assets/NU.png" alt="NU" />
         </div>
       </div>
-    </div>
   );
 }

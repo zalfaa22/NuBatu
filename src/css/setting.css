@@ -11,6 +11,12 @@
     font-size: 12px;
     color: #404040;
 }
+.profile-acc {
+    width: 2.5rem;
+}
+.profile-set-img {
+    width: 4rem;
+}
 
 @media (min-width: 425px) {
     .page-title {
@@ -26,9 +32,35 @@
         font-size: 14px;
         color: #404040;
     }
+    .profile-acc {
+        width: auto;
+    }
+    .profile-set-img {
+        width: 4.5rem;
+    }
 }
 
 @media (min-width: 768px) {
+    .page-title {
+        font-size: 36px !important;
+    }
+    .setting-title {
+        font-size: 25px;
+        padding-right: 2rem;
+    }
+    .text1-set {
+        font-size: 20px;
+    }
+    .text2-set {
+        font-size: 14px;
+        color: #404040;
+    }
+    .profile-set-img {
+        width: 8rem;
+    }
+}
+
+@media (min-width: 1024px) {
     .page-title {
         font-size: 36px !important;
     }

@@ -1,5 +1,4 @@
 import React, { useState, useRef } from "react";
-import Sidebar from "../../components/sidebar";
 import Button from "react-bootstrap/Button";
 import "../../css/addberita.css";
 
@@ -30,10 +29,6 @@ export default function AddBerita() {
   //     );
 
   return (
-    <div className="">
-      <div>
-        <Sidebar />
-      </div>
       <div className="content h-auto" style={{ backgroundColor: "#EDF6F0" }}>
         <div className="px-3 px-md-4 py-4">
           <div className="mb-4">
@@ -166,6 +161,5 @@ export default function AddBerita() {
           </div>
         </div>
       </div>
-    </div>
   );
 }
