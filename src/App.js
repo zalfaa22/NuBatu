@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
+import Sidebar from "./components/sidebar";
 import login from "./pages/login";
 import Beranda from "./pages/beranda";
 import Koin from "./pages/koin";
@@ -16,6 +17,7 @@ import "bootstrap-icons/font/bootstrap-icons.css"
 function App() {
   return (
     <div className="App">
+      <Sidebar/>
       <Routes>
         <Route path="/" Component={login} />
         <Route path="/beranda" Component={Beranda} />

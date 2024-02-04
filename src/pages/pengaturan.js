@@ -1,21 +1,16 @@
 import React, { useState } from "react";
-import Sidebar from "../components/sidebar";
 import Button from "react-bootstrap/Button";
 import "../css/setting.css";
 
 export default function Pengaturan() {
   return (
-    <div className="">
-      <div>
-        <Sidebar />
-      </div>
       <div className="content" style={{ backgroundColor: "#EDF6F0" }}>
         <div className="px-3 px-md-5 py-4">
           <div className="mb-4 mb-md-5">
             <div className="d-flex justify-content-between">
               <h2 className="fw-bold page-title">Setting</h2>
               <div className="d-flex">
-                <img src="../assets/berita/profile.svg" />
+                <img src="../assets/berita/profile.svg" className="profile-acc"/>
               </div>
             </div>
           </div>
@@ -29,8 +24,8 @@ export default function Pengaturan() {
                 <div className="d-flex align-items-center">
                   <img
                     src="../../assets/profile-set.svg"
-                    alt="Youtube Icon"
-                    className="me-3 img-fluid"
+                    alt="profile"
+                    className="me-3 img-fluid profile-set-img"
                   />
                   <p className="fw-regular m-0 text2-set">
                     Update your avatar by clicking the image beside. 288x288 px
@@ -47,6 +42,16 @@ export default function Pengaturan() {
                     aria-describedby="inputGroup-sizing-sm"
                   />
                 </div>
+                {/* <label for="exampleInputEmail1" class="form-label">
+                      Nama Program
+                    </label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="exampleInputEmail1"
+                      aria-describedby="emailHelp"
+                      placeholder="Nama Program"
+                    /> */}
                 <p className="fw-regular mb-0 text2-set">Email</p>
                 <div class="input-group input-group-sm mb-3">
                   <input
@@ -89,6 +94,5 @@ export default function Pengaturan() {
           </div>
         </div>
       </div>
-    </div>
   );
 }

@@ -1,11 +1,29 @@
-import React, { useState } from "react";
-import Sidebar from "../../components/sidebar";
+import React, { useState, useEffect } from "react";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import "../../css/berita.css";
 
 export default function Event() {
   const [showModal, setShowModal] = useState(false);
+  const [switchState1, setSwitchState1] = useState(localStorage.getItem("switchState1") === "true");
+  const [switchState2, setSwitchState2] = useState(localStorage.getItem("switchState2") === "true");
+  const [switchState3, setSwitchState3] = useState(localStorage.getItem("switchState3") === "true");
+  const [selectedType, setSelectedType] = useState('');
+
+  const toggleSwitch1 = () => {
+    setSwitchState1((prev) => !prev);
+    localStorage.setItem("switchState1", (!switchState1).toString());
+  };
+
+  const toggleSwitch2 = () => {
+    setSwitchState2((prev) => !prev);
+    localStorage.setItem("switchState2", (!switchState2).toString());
+  };
+
+  const toggleSwitch3 = () => {
+    setSwitchState3((prev) => !prev);
+    localStorage.setItem("switchState3", (!switchState3).toString());
+  };
 
   const handleEditClick = () => {
     setShowModal(true); // Tampilkan modal saat tombol "Edit" diklik
@@ -15,11 +33,21 @@ export default function Event() {
     setShowModal(false); // Sembunyikan modal saat ditutup
   };
 
+  const handleTypeChange = (event) => {
+    setSelectedType(event.target.value);
+  };
+
+  useEffect(() => {
+    // Cleanup localStorage when the component is unmounted
+    return () => {
+      localStorage.removeItem("switchState1");
+      localStorage.removeItem("switchState2");
+      localStorage.removeItem("switchState3");
+    };
+  }, []);
+
   return (
-    <div className="">
-      <div>
-        <Sidebar />
-      </div>
+    <>
       <div className="content vh-100" style={{ backgroundColor: "#EDF6F0" }}>
         <div className="px-3 px-md-5 py-4">
           <div className="mb-5">
@@ -41,6 +69,13 @@ export default function Event() {
                 <p className="fw-bold m-0">Youtube Video</p>
               </div>
               <div className="d-flex">
+              <div className="d-flex align-items-center pe-5 me-2">
+                  <div
+                    className={`switch-button ${switchState1 ? "off" : "on"}`}
+                    onClick={toggleSwitch1}>
+                    <div className={`slider ${switchState1 ? "off" : "on"}`} />
+                  </div>
+                </div>
                 <div className="d-flex align-items-center me-3">
                   <button className="edit-btn" onClick={handleEditClick}>
                     <img src="../assets/berita/edit-icon.svg" />
@@ -67,6 +102,13 @@ export default function Event() {
                 <p className="fw-bold m-0">Instagram post</p>
               </div>
               <div className="d-flex">
+                <div className="d-flex align-items-center pe-5 me-2">
+                  <div
+                    className={`switch-button ${switchState2 ? "off" : "on"}`}
+                    onClick={toggleSwitch2}>
+                    <div className={`slider ${switchState2 ? "off" : "on"}`} />
+                  </div>
+                </div>
                 <div className="d-flex align-items-center me-3">
                   <button className="edit-btn">
                     <img src="../assets/berita/edit-icon.svg" />
@@ -93,6 +135,13 @@ export default function Event() {
                 <p className="fw-bold m-0">Instagram post</p>
               </div>
               <div className="d-flex">
+              <div className="d-flex align-items-center pe-5 me-2">
+                  <div
+                    className={`switch-button ${switchState3 ? "off" : "on"}`}
+                    onClick={toggleSwitch3}>
+                    <div className={`slider ${switchState3 ? "off" : "on"}`} />
+                  </div>
+                </div>
                 <div className="d-flex align-items-center me-3">
                   <button className="edit-btn">
                     <img src="../assets/berita/edit-icon.svg" />
@@ -128,20 +177,23 @@ export default function Event() {
           >
             Sematkan video youtube, instagram post, dan lainnya.
           </p>
-          <p
-            className="fw-regular mb-1 text2-set fw-medium"
-            style={{ color: "#404040" }}
-          >
-            Pilih tipe penyematan
-          </p>
-          <div class="input-group input-group-sm mb-3">
-            <input
-              type="text"
-              className="form-control rounded"
-              aria-label="Sizing example input"
-              aria-describedby="inputGroup-sizing-sm"
-            />
-          </div>
+          <p className="fw-regular mb-1 text2-set fw-medium" style={{ color: "#404040" }}>
+        Pilih tipe penyematan
+      </p>
+      <div className="input-group input-group-sm mb-3">
+        <select
+          className="form-select rounded "
+          aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-sm"
+          value={selectedType}
+          onChange={handleTypeChange}
+        >
+          <option value="">Pilih...</option>
+          <option value="tipe1">Tipe 1</option>
+          <option value="tipe2">Tipe 2</option>
+          {/* Tambahkan opsi lainnya sesuai kebutuhan */}
+        </select>
+      </div>
           <p
             className="fw-regular mb-1 text2-set fw-medium"
             style={{ color: "#404040" }}
@@ -179,6 +231,6 @@ export default function Event() {
           </div>
         </div>
       </Modal>
-    </div>
+      </>
   );
 }

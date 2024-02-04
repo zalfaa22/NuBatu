@@ -31,7 +31,8 @@
     overflow-x: hidden;
     scrollbar-width: thin;
   scrollbar-color: transparent transparent;
-  padding: 1rem;
+  padding: 0rem;
+  z-index: 1000;
 }
 .sidebar::-webkit-scrollbar {
     width: 6px; /* lebar scrollbar */
@@ -46,6 +47,15 @@
   }
   #parentM li a:hover {
     background-color: #078D41;
+}
+.toggle-btn-menu {
+    background: transparent;
+    border: none;
+    outline: none;
+    align-items: center;
+    align-content: center;
+    margin-left: 4px;
+    padding: 1rem;
 }
 
 
@@ -67,6 +77,9 @@
     background-color: #EDF6F0 !important;
     min-height: 100% !important;
 }
+.logo-sidebar {
+    width: 11rem;
+}
 }
 @media (min-width: 768px) {
     .content {
@@ -74,6 +87,22 @@
     background-color: #EDF6F0 !important;
     min-height: 100% !important;
 }
+.logo-sidebar {
+    width: auto;
 }
+.sidebar {
+    position: fixed;
+    width: 16rem !important;
+    min-height: 100%;
+    max-height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  padding: 1rem;
+}
+}
+
+
 
 

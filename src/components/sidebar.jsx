@@ -57,17 +57,17 @@ function Sidebar() {
 
   return (
     <div className={`sidebar ${minimized ? 'minimized' : ''}`} style={{ backgroundColor: "#060313" }}>
-        <div className='m-2'>
-        <button className="toggle-btn d-flex d-md-none" onClick={toggleSidebar}>
+        <div className='d-flex'>
+        <button className="toggle-btn-menu d-flex d-md-none" onClick={toggleSidebar}>
           {/* <img className="mt-4 img-fluid" src="../assets/sidebar-logo.svg" alt="Logo" /> */}
-          <i className="bi bi-list"></i>
+          <i className="bi bi-list menu-open text-white"></i>
         </button>
             {/* <span className='brand-name'>sidebar</span> */}
-            {!minimized && <img className="mt-4 img-fluid" src="../assets/sidebar-logo.svg" />}
+            {!minimized && <img className="mt-0 p-2 img-fluid logo-sidebar" src="../assets/sidebar-logo.svg" />}
         </div>
-        <hr className='text-dark'/>
+        {/* <hr className='text-dark'/> */}
         <div className='list-group list-group-flush'>
-        <ul className="nav nav-pills flex-column mt-md-4 " id="parentM">
+        <ul className="nav nav-pills flex-column mt-md-3 " id="parentM">
                 <li className="nav-item text-white my-1">
                   <a href="/beranda" className="nav-link" aria-current="page">
                     <img src="../assets/sidebar/beranda-icon.svg" />

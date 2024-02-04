@@ -1,34 +1,20 @@
 import React, { useState } from "react";
-import Sidebar from "../../components/sidebar";
 import Button from "react-bootstrap/Button";
+import Dropdown from "react-bootstrap/Dropdown";
 import "../../css/berita.css";
 
 export default function Artikel() {
   return (
-    <div className="">
-      <div>
-        <Sidebar />
-      </div>
       <div className="content vh-100" style={{ backgroundColor: "#EDF6F0" }}>
         <div className="px-3 px-md-5 py-4">
           <div className="mb-5">
             <div className="d-flex justify-content-between">
-              <h2 className="fw-bold page-title">Berita</h2>
+              <h2 className="fw-bold page-title">Artikel</h2>
               <div className="d-flex">
-                <Button
-                  href="/addBerita"
-                  variant="success"
-                  size="lg"
-                  className="mt-1 me-3"
-                >
-                  Tambah Berita
-                  <img
-                    src="../../assets/berita/plus.svg"
-                    alt="add"
-                    className="ms-2"
-                  />
-                </Button>{" "}
-                <img src="../assets/berita/profile.svg" />
+                <img
+                  src="../assets/berita/profile.svg"
+                  className="profile-acc"
+                />
               </div>
             </div>
           </div>
@@ -37,16 +23,26 @@ export default function Artikel() {
               <div>
                 <Button
                   variant="outline-success fs-6 fw-semibold text-black"
-                  className="berita-btn"
+                  className="berita-btn1"
                 >
                   Success
                 </Button>{" "}
-                <Button variant="outline-success-none fs-6 fw-semibold text-black">
+                <Button variant="outline-success-none fs-6 fw-semibold text-black" className="berita-btn2">
                   Draft
                 </Button>{" "}
-                <Button variant="outline-success-none fs-6 fw-semibold text-black">
+                <Button variant="outline-success-none fs-6 fw-semibold text-black" className="berita-btn3">
                   Publish
                 </Button>{" "}
+                <Dropdown className="dropdown-berita text-decoration-none">
+                  <Dropdown.Toggle variant="success" id="dropdown-basic">
+                    Success
+                  </Dropdown.Toggle>
+
+                  <Dropdown.Menu>
+                    <Dropdown.Item href="#/action-1">Draft</Dropdown.Item>
+                    <Dropdown.Item href="#/action-2">Publish</Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
               </div>
               <div className="">
                 <Button
@@ -189,6 +185,5 @@ export default function Artikel() {
           </div>
         </div>
       </div>
-    </div>
   );
 }
