@@ -1,119 +1,179 @@
-import React from 'react'
-import "./css/side.css"
+import React, { useState, useEffect } from 'react'
+import "./css/sidebar.css"
 import "bootstrap/js/dist/dropdown";
 import "bootstrap/js/dist/collapse"
 
-function side() {
+function Sidebar() {
+  const [minimized, setMinimized] = useState(false);
+  const [submenuOpen, setSubmenuOpen] = useState(false);
+  const [submenu2Open, setSubmenu2Open] = useState(false);
+
+
+  const toggleSubmenu = () => {
+    setSubmenuOpen(!submenuOpen);
+  };
+
+  const toggleSubmenu2 = () => {
+    setSubmenu2Open(!submenu2Open);
+  };
+
+  const toggleSidebar = () => {
+    setMinimized(!minimized);
+  };
+
+  const handleKoinClick = () => {
+    // Set the sidebar to full size when the koin icon is clicked
+    setMinimized(false);
+    setSubmenuOpen(!submenuOpen);
+  };
+
+  const handleKontenClick = () => {
+    // Set the sidebar to full size when the koin icon is clicked
+    setMinimized(false);
+    setSubmenu2Open(!submenu2Open);
+  };
+
+  useEffect(() => {
+    // Check the window width on mount and resize
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        // For small screens, initially set the sidebar to be minimized
+        setMinimized(true);
+      } else {
+        // For medium and larger screens, initially set the sidebar to be visible
+        setMinimized(false);
+      }
+    };
+
+    // Attach the event listener
+    window.addEventListener('resize', handleResize);
+
+    // Call the handleResize function to set the initial state
+    handleResize();
+
+    // Clean up the event listener on component unmount
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
-    <div className='side' style={{backgroundColor: "#060313"}}>
-        <div className='m-2'>
+    <div className={`sidebar ${minimized ? 'minimized' : ''}`} style={{ backgroundColor: "#060313" }}>
+        <div className='d-flex'>
+        <button className="toggle-btn-menu d-flex d-md-none" onClick={toggleSidebar}>
+          {/* <img className="mt-4 img-fluid" src="../assets/sidebar-logo.svg" alt="Logo" /> */}
+          <i className="bi bi-list menu-open text-white"></i>
+        </button>
             {/* <span className='brand-name'>sidebar</span> */}
-            <img className="mt-4 img-fluid" src="../assets/sidebar-logo.svg" />
+            {!minimized && <img className="mt-0 p-2 img-fluid logo-sidebar" src="../assets/sidebar-logo.svg" />}
         </div>
-        <hr className='text-dark'/>
+        {/* <hr className='text-dark'/> */}
         <div className='list-group list-group-flush'>
-        <ul class="nav nav-pills flex-column mt-md-4" id="parentM">
-                <li class="nav-item text-white my-1">
-                  <a href="/" class="nav-link" aria-current="page">
+        <ul className="nav nav-pills flex-column mt-md-3 " id="parentM">
+                <li className="nav-item text-white my-1">
+                  <a href="/beranda" className="nav-link" aria-current="page">
                     <img src="../assets/sidebar/beranda-icon.svg" />
-                    <span className="ms-2 text-white">Beranda</span>
+                    {!minimized && <span className="ms-2 text-white">Beranda</span>}
                   </a>
                 </li>
 
-                <li class="nav-item text-white my-1">
-                  <a
+                <li className="nav-item text-white my-1" onClick={handleKoinClick}>
+                <a
                     href="#submenu"
-                    class="nav-link"
+                    className="nav-link"
                     data-bs-toggle="collapse"
                     aria-current="page"
-                  >
+                  ><div className='d-flex justify-content-between'>
+                    <div>
                     <img src="../assets/sidebar/koin-icon.svg" />
-                    <span className="ms-2 text-white ">Koin NUsantara</span>{" "}
-                    <img className="ms-4" src="../assets/sidebar/arrow-right.svg" />
+                    {!minimized && <span className="ms-2 text-white ">Koin Nusantara</span>}
+                    </div>
+                    {!minimized && <img className="" src={submenuOpen ? "../assets/sidebar/arrow-down.svg" : "../assets/sidebar/arrow-right.svg"} />}
+                    </div>
                   </a>
                   <ul
-                    class="nav collapse row "
+                    className={`nav collapse row ${submenuOpen ? 'show' : ''}`}
                     id="submenu"
                     data-bs-parent="#parentM"
                   >
-                    <li class="nav-item">
-                      <a class="nav-link text-white" href="/campaign" aria-current="page">
+                    {!minimized && <li className="nav-item">
+                      <a className="nav-link text-white" href="/campaign" aria-current="page">
                         <img src="../assets/sidebar/dot-icon.svg"/><span className="ms-2">Campaign Program</span>
                       </a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link text-white" href="/donatur">
+                    </li>}
+                    {!minimized && <li className="nav-item">
+                      <a className="nav-link text-white" href="/donatur">
                       <img src="../assets/sidebar/dot-icon.svg"/><span className="ms-2">Donatur</span>
                       </a>
-                    </li>
+                    </li>}
                   </ul>
                 </li>
-                <li class="nav-item text-white my-1">
-                  <a href="/nderektanglet" class="nav-link" aria-current="page">
+
+                
+
+                <li className="nav-item text-white my-1">
+                  <a href="/nderektanglet" className="nav-link" aria-current="page">
                     <img src="../assets/sidebar/nderek-icon.svg" />
-                    <span className="ms-2 text-white">Nderek Tanglet</span>
+                    {!minimized && <span className="ms-2 text-white">Nderek Tanglet</span>}
                   </a>
                 </li>
-                <li class="nav-item text-white my-1 ">
-                  <a href="#submenu2" class="nav-link" data-bs-toggle="collapse" aria-current="page">
+                <li className="nav-item text-white my-1 " onClick={handleKontenClick}>
+                  <a href="#submenu2" className="nav-link" data-bs-toggle="collapse" aria-current="page">
+                  <div className='d-flex justify-content-between'>
+                    <div>
                     <img src="../assets/sidebar/konten-icon.svg" />
-                    <span className="ms-2 text-white">Konten</span>
-                    <img className="" src="../assets/sidebar/arrow-right.svg" />
+                    {!minimized && <span className="ms-2 text-white">Konten</span>}
+                    </div>
+                    {!minimized && <img className="" src={submenu2Open ? "../assets/sidebar/arrow-down.svg" : "../assets/sidebar/arrow-right.svg"}/>}
+                  </div>
                   </a>
                   <ul
-                    class="nav collapse row "
+                    className={`nav collapse row ${submenu2Open ? 'show' : ''}`}
                     id="submenu2"
                     data-bs-parent="#parentM"
                   >
-                    <li class="nav-item">
-                      <a class="nav-link text-white" href="/berita" aria-current="page">
+                    {!minimized && <li className="nav-item">
+                      <a className="nav-link text-white" href="/berita" aria-current="page">
                         <img src="../assets/sidebar/dot-icon.svg"/><span className="ms-2">Berita</span>
                       </a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link text-white" href="#">
+                    </li>}
+                    {!minimized && <li className="nav-item">
+                      <a className="nav-link text-white" href="/artikel">
                       <img src="../assets/sidebar/dot-icon.svg"/><span className="ms-2">Artikel</span>
                       </a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link text-white" href="#">
+                    </li>}
+                    {!minimized && <li className="nav-item">
+                      <a className="nav-link text-white" href="/event">
                       <img src="../assets/sidebar/dot-icon.svg"/><span className="ms-2">Event</span>
                       </a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link text-white" href="#">
+                    </li>}
+                    {!minimized && <li className="nav-item">
+                      <a className="nav-link text-white" href="#">
                       <img src="../assets/sidebar/dot-icon.svg"/><span className="ms-2">Partnerhip/Ads</span>
                       </a>
-                    </li>
+                    </li>}
                   </ul>
                 </li>
-                <li class="nav-item text-white my-1">
-                  <a href="#" class="nav-link" aria-current="page">
+                <li className="nav-item text-white my-1">
+                  <a href="#" className="nav-link" aria-current="page">
                     <img src="../assets/sidebar/anggota-icon.svg" />
-                    <span className="ms-2 text-white">Anggota</span>
+                    {!minimized && <span className="ms-2 text-white">Anggota</span>}
                   </a>
                 </li>
-                <li class="nav-item text-white my-1">
-                  <a href="#" class="nav-link" aria-current="page">
+                <li className="nav-item text-white my-1">
+                  <a href="#" className="nav-link" aria-current="page">
                     <img src="../assets/sidebar/pengurus-icon.svg" />
-                    <span className="ms-2 text-white">Pengurus</span>
+                    {!minimized && <span className="ms-2 text-white">Pengurus</span>}
                   </a>
                 </li>
-                <li class="nav-item text-white my-1">
-                  <a href="#" class="nav-link" aria-current="page">
+                <li className="nav-item text-white my-1">
+                  <a href="/pengaturan" className="nav-link" aria-current="page">
                     <img src="../assets/sidebar/pengaturan-icon.svg" />
-                    <span className="ms-2 text-white">Pengaturan</span>
+                    {!minimized && <span className="ms-2 text-white">Pengaturan</span>}
                   </a>
                 </li>
-                {/* <li class="nav-item">
-                  <a href="#" class="nav-link">
-                    Disabled
-                  </a>
-                </li> */}
               </ul>
         </div>
     </div>
   )
 }
 
-export default side
+export default Sidebar
