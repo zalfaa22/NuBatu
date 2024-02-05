@@ -1,0 +1,328 @@
+@media (max-width: 1440px) {
+    .bungkus-foto{
+        padding: 40px;
+        background-color: #EDF6F0;
+    }
+    .foto{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .back{
+        display: flex;
+        align-items: start;
+        justify-content: start;
+        gap: 10px;
+        text-decoration: none;
+    }
+    .back2{
+        font-size: 16px;
+        color: #404040;
+    }
+    .button-kanan{
+        display: flex;
+        align-items: center;
+        justify-content: space-between; 
+        width: 362px;
+    }
+    .save{
+        width: 174px;
+        height: 49px;
+        border: 1.5px solid #BFBFBF;
+        border-radius: 10px;
+        font-size: 16px;
+        background-color: transparent;
+    }
+    .verifikasi{
+        width: 174px;
+        height: 49px;
+        border: 2px solid #BFBFBF;
+        border-radius: 10px;
+        font-size: 16px;
+        background-color: rgba(7, 141, 65, 0.8);
+        border: none;
+        color: white;
+    }
+    .info-umum{
+        border: none;
+        font-size: 14px;
+        color: #404040; 
+        text-decoration: none;
+    }
+    .umum-menu{
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        width: 264px;
+        margin-top: 30px;
+        height: 40px;
+    }
+    .foto-detail{
+        color: #404040;
+        font-size: 14px;
+        /* text-decoration: none; */
+        border: 2px solid #009B4C;
+        width: 104px;
+        height: 40px;
+        border-radius: 10px; 
+        text-align: center;
+        justify-content: center;
+        display: block;
+        background-color: transparent;
+    }
+    
+    .konten-putih{
+        background-color: white;
+        padding: 30px;
+        margin-top: 30px;
+        border-radius: 10px;
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .jud{
+        display: flex;
+        align-items: start;
+        justify-content: end;
+        gap: 260px;
+        padding-bottom: 20px;
+        width: 100%;
+    }
+    .judul-gambar-detail h1{
+        font-size: 20px;
+    }
+    .judul-gambar-detail h2{
+        display: flex;
+        align-items: start;
+        justify-content: start;
+        gap: 10px;
+        height: auto;
+    }
+    .require{
+        font-size: 12px;
+        color: #808080;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+    .bungkus-foto{
+        padding: 30px;
+        background-color: #EDF6F0;
+    }
+    .foto{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .back{
+        display: flex;
+        align-items: start;
+        justify-content: start;
+        gap: 10px;
+        text-decoration: none;
+    }
+    .back2{
+        font-size: 14px;
+        color: #404040;
+    }
+    .button-kanan{
+        display: flex;
+        align-items: center;
+        justify-content: space-between; 
+        width: 250px;
+    }
+    .save{
+        width: 120px;
+        height: 40px;
+        border: 1.5px solid #BFBFBF;
+        border-radius: 10px;
+        font-size: 12px;
+        background-color: transparent;
+    }
+    .verifikasi{
+        width: 120px;
+        height: 40px;
+        border: 2px solid #BFBFBF;
+        border-radius: 10px;
+        font-size: 12px;
+        background-color: rgba(7, 141, 65, 0.8);
+        border: none;
+        color: white;
+    }
+    .info-umum{
+        border: none;
+        font-size: 12px;
+        color: #404040; 
+        text-decoration: none;
+    }
+    .umum-menu{
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        width: 210px;
+        margin-top: 30px;
+    }
+    .foto-detail{
+        color: #404040;
+        font-size: 12px;
+        /* text-decoration: none; */
+        border: 2px solid #009B4C;
+        width: 104px;
+        height: 40px;
+        border-radius: 10px; 
+        text-align: center;
+        justify-content: center;
+        display: block;
+        background-color: transparent;
+    }
+    
+    .konten-putih{
+        background-color: white;
+        padding: 30px;
+        margin-top: 30px;
+        border-radius: 10px;
+        width: 100%;
+    }
+    .jud{
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 20px;
+        gap: 0px;
+    }
+    .judul-gambar-detail h1{
+        font-size: 18px;
+    }
+    .judul-gambar-detail h2{
+        display: flex;
+        align-items: start;
+        justify-content: start;
+        gap: 5px;
+        height: auto;
+    }
+    .require{
+        font-size: 10px;
+        color: #808080;
+    }
+    .seru{
+        width: 12px; 
+    }
+}
+
+
+
+
+
+
+
+
+@media (max-width: 320px) {
+    .bungkus-foto{
+        padding: 20px;
+        background-color: #EDF6F0;
+    }
+    .foto{
+        display: block;
+    }
+    .back{
+        display: flex;
+        align-items: start;
+        justify-content: start;
+        gap: 10px;
+        text-decoration: none;
+    }
+    .back2{
+        font-size: 14px;
+        color: #404040;
+    }
+    .button-kanan{
+        display: flex;
+        align-items: center;
+        justify-content: space-between; 
+        width: 100%;
+        padding-top: 10px;
+    }
+    .save{
+        width: 120px;
+        height: 40px;
+        border: 1.5px solid #BFBFBF;
+        border-radius: 10px;
+        font-size: 12px;
+        background-color: transparent;
+    }
+    .verifikasi{
+        width: 120px;
+        height: 40px;
+        border: 2px solid #BFBFBF;
+        border-radius: 10px;
+        font-size: 12px;
+        background-color: rgba(7, 141, 65, 0.8);
+        border: none;
+        color: white;
+    }
+    .info-umum{
+        border: none;
+        font-size: 12px;
+        color: #404040; 
+        text-decoration: none;
+    }
+    .umum-menu{
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        width: 265px;
+        margin-top: 30px;
+    }
+    .foto-detail{
+        color: #404040;
+        font-size: 12px;
+        /* text-decoration: none; */
+        border: 2px solid #009B4C;
+        width: 104px;
+        height: 40px;
+        border-radius: 10px; 
+        text-align: center;
+        justify-content: center;
+        display: block;
+        background-color: transparent;
+    }
+    
+    .konten-putih{
+        background-color: white;
+        padding: 30px;
+        margin-top: 30px;
+        border-radius: 10px;
+        width: 100%;
+    }
+    .jud{
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 20px;
+    }
+    .judul-gambar-detail h1{
+        font-size: 18px;
+    }
+    .judul-gambar-detail h2{
+        display: flex;
+        align-items: start;
+        justify-content: start;
+        gap: 5px;
+        height: auto;
+    }
+    .require{
+        font-size: 10px;
+        color: #808080;
+    }
+    .seru{
+        width: 12px; 
+    }
+}
