@@ -16,7 +16,7 @@ export default function Beranda() {
         {/* Sidebar */}
         {toggle && (
           <div
-            className="sidebar col-md-2 vh-100 position-fixed" style={{ backgroundColor: "#060313" }}>
+            className="sidebar col-md-2 vh-auto position-fixed" style={{ backgroundColor: "#060313" }}>
             <Sidebar />
           </div>
         )}

@@ -2,9 +2,12 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import login from "./pages/login";
 import Beranda from "./pages/beranda";
-import Koin from "./pages/koin";
-import tabel from "./components/tabel";
+import Campaign from "./pages/campaign";
+import AddCampaign from "./pages/addCampaign";
+import FotoDetail from "./pages/fotoDetail";
 import Donatur from "./pages/donatur";
+import NderekTanglet from "./pages/nderekTanglet";
+import DetailChat from "./pages/detailChat";
 import Berita from "./pages/berita"; 
 import AddBerita from "./pages/addBerita";
 import "bootstrap-icons/font/bootstrap-icons.css"
@@ -16,9 +19,12 @@ function App() {
       <Routes>
         <Route path="/login" Component={login} />
         <Route path="/" Component={Beranda} />
-        <Route path="/koin" Component={Koin} />
-        <Route path="/tabel" Component={tabel} />
+        <Route path="/campaign" Component={Campaign} />
+        <Route path="/addCampaign" Component={AddCampaign} />
+        <Route path="/fotoDetail" Component={FotoDetail} />
         <Route path="/donatur" Component={Donatur} />
+        <Route path="/nderekTanglet" Component={NderekTanglet} />
+        <Route path="/detailChat" Component={DetailChat} />
         <Route path="/berita" Component={Berita} />
         <Route path="/addBerita" Component={AddBerita} />
       </Routes>

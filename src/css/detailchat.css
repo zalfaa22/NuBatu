@@ -1,0 +1,21 @@
+@media (max-width: 1440px) {
+.bungkus-chat{
+    padding: 40px;
+}
+.arrow{
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    gap: 10px;
+}
+.bungkus-ziyad{
+    background-color: white;
+    padding: 40px;
+    border-radius: 20px;
+    margin-top:40px;
+}
+.oren{
+    align-items: start;
+}
+
+}

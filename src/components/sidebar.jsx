@@ -14,7 +14,7 @@ function side() {
         <div className='list-group list-group-flush'>
         <ul class="nav nav-pills flex-column mt-md-4" id="parentM">
                 <li class="nav-item text-white my-1">
-                  <a href="#" class="nav-link" aria-current="page">
+                  <a href="/" class="nav-link" aria-current="page">
                     <img src="../assets/sidebar/beranda-icon.svg" />
                     <span className="ms-2 text-white">Beranda</span>
                   </a>
@@ -37,19 +37,19 @@ function side() {
                     data-bs-parent="#parentM"
                   >
                     <li class="nav-item">
-                      <a class="nav-link text-white" href="/koin" aria-current="page">
+                      <a class="nav-link text-white" href="/campaign" aria-current="page">
                         <img src="../assets/sidebar/dot-icon.svg"/><span className="ms-2">Campaign Program</span>
                       </a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link text-white" href="#">
+                      <a class="nav-link text-white" href="/donatur">
                       <img src="../assets/sidebar/dot-icon.svg"/><span className="ms-2">Donatur</span>
                       </a>
                     </li>
                   </ul>
                 </li>
                 <li class="nav-item text-white my-1">
-                  <a href="#" class="nav-link" aria-current="page">
+                  <a href="/nderektanglet" class="nav-link" aria-current="page">
                     <img src="../assets/sidebar/nderek-icon.svg" />
                     <span className="ms-2 text-white">Nderek Tanglet</span>
                   </a>
