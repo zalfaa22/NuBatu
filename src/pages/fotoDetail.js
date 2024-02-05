@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Sidebar from "../components/sidebar";
 import Nav from "../components/nav";
-import '../css/fotodetail.css'
-import DragDropFiles from "../components/grid";
+import '../css/fotodetail.css';
+import Gridfoto from "../components/grid";
 
 export default function FotoDetail() {
     const [toggle, setToggle] = useState(true);
@@ -66,8 +66,10 @@ export default function FotoDetail() {
                                             <p className="require">Require</p>
                                         </h2>
                                     </div>
-
-                                    < DragDropFiles />
+                                    <div className="gfoto">
+                                      <Gridfoto />  
+                                    </div>
+                                    
 
                                 </div>
                             </div>

@@ -60,31 +60,31 @@ export default function AddCampaign() {
                                     </div>
                                     <form className="nam-prog">
                                         <div class="mb-3">
-                                            <label for="exampleInputEmail1" class="form-label">Nama Program</label>
+                                            <coverlabel for="exampleInputEmail1" class="form-label">Nama Program</coverlabel>
                                             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
                                             placeholder="Nama Program"
-                                            style={{fontSize: "16px"}} />
+                                            style={{fontSize: "16px", marginTop: "5px"}} />
                                         </div>
                                         <div class="mb-3">
-                                            <label for="exampleInputPassword1" class="form-label">
+                                            <coverlabel for="exampleInputPassword1" class="form-label">
                                                 Deskripsi
-                                            </label>
+                                            </coverlabel>
                                             <textarea
                                                 class="form-control" id="exampleInputPassword1" aria-describedby="emailHelp" placeholder="E.g. Deskripsi Detail"
-                                                style={{fontSize: "16px"}}>
+                                                style={{fontSize: "16px", marginTop: "5px"}}>
                                             </textarea>
                                         </div>
 
                                         <hr className="my-2" />
 
                                         <div class="mb-3">
-                                            <label for="exampleInputEmail1" class="form-label">
+                                            <coverlabel for="exampleInputEmail1" class="form-label">
                                                 Dana yang diajukan
-                                            </label>
+                                            </coverlabel>
                                             <div class="input-group">
-                                                <img src="../../assets/rp.svg" alt="Currency Icon" class="input-group-text custom-icon" />
+                                                <img src="../../assets/rp.svg" alt="Currency Icon" class="input-group-text custom-icon" style={{borderRight: "none", marginTop: "5px"}} />
                                                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="0"
-                                                style={{fontSize: "16px"}} />
+                                                style={{fontSize: "16px", marginTop: "5px", borderLeft: "none"}} />
                                             </div>
                                         </div>
 
