@@ -1,9 +1,4 @@
-
-
 @media (max-width: 1440px) {
-    /* .content {
-        padding-left: 15rem;
-    } */
     .cover{
         padding: 60px;
         display: flex;        
@@ -60,9 +55,6 @@
 
 
 @media (max-width: 768px) {
-    /* .content {
-        padding-left: 0rem;
-    } */
     .cover{
         padding: 40px;
         display: flex;        

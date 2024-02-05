@@ -95,12 +95,12 @@ function Sidebar() {
                     data-bs-parent="#parentM"
                   >
                     {!minimized && <li className="nav-item">
-                      <a className="nav-link text-white" href="/koin" aria-current="page">
+                      <a className="nav-link text-white" href="/campaign" aria-current="page">
                         <img src="../assets/sidebar/dot-icon.svg"/><span className="ms-2">Campaign Program</span>
                       </a>
                     </li>}
                     {!minimized && <li className="nav-item">
-                      <a className="nav-link text-white" href="#">
+                      <a className="nav-link text-white" href="/donatur">
                       <img src="../assets/sidebar/dot-icon.svg"/><span className="ms-2">Donatur</span>
                       </a>
                     </li>}
@@ -110,7 +110,7 @@ function Sidebar() {
                 
 
                 <li className="nav-item text-white my-1">
-                  <a href="#" className="nav-link" aria-current="page">
+                  <a href="/nderektanglet" className="nav-link" aria-current="page">
                     <img src="../assets/sidebar/nderek-icon.svg" />
                     {!minimized && <span className="ms-2 text-white">Nderek Tanglet</span>}
                   </a>

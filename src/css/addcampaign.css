@@ -1,0 +1,483 @@
+@media (max-width: 1440px) {
+.bungkus-donatur{
+    padding: 40px;
+    background-color: #EDF6F0;
+}
+.donatur{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.kiri{
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    gap: 10px;
+    text-decoration: none;
+}
+.kembali{
+    font-size: 16px;
+    color: #404040;
+}
+.button-atas-kanan{
+    display: flex;
+        align-items: center;
+        justify-content: space-between; 
+        width: 362px;
+}
+.simpan{
+    width: 174px;
+    height: 49px;
+    border: 1.5px solid #BFBFBF;
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: transparent;
+}
+.verif{
+    width: 174px;
+    height: 49px;
+    border: 2px solid #BFBFBF;
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: rgba(7, 141, 65, 0.8);
+    border: none;
+    color: white;
+}
+.info{
+    width: 142px;
+    height: 44px;
+    border-radius: 10px;
+    border: 1.5px solid #009B4C;
+    font-size: 14px;
+}
+.umum{
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    width: 265px;
+    margin-top: 30px;
+}
+.umum p{
+    color: #404040;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.putih{
+    background-color: white;
+    padding: 30px;
+    margin-top: 30px;
+    border-radius: 10px;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 50px;
+}
+.judul{
+    font-size: 20px;
+    color: black;
+}
+.nam-prog{
+    margin-top: -10px;
+    font-size: 14px;
+}
+
+
+.form{
+    height: auto;
+    width: 50%;
+}
+.form-label{
+    font-size: 14px;
+    color: #404040;
+}
+.custom-icon {
+    border-right: none; /* Remove left border */
+    background-color: white;
+}
+
+
+
+
+
+
+.gambar{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 20px;
+    height: 420px;
+}
+.inisiator{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto;
+}
+.gambar h1{
+    font-size: 16px;
+    color: black;
+    font-weight: bold;
+    width: "auto";
+}
+.gambar h2{
+    font-size: 16px;
+    color: #404040;
+}
+.gambar h3{
+    display: flex;
+    align-items: end;
+    justify-content: start;
+    gap: 20px;
+}
+.gambar h3 img{
+    width: 56px;
+}
+.gambar h3 p{
+    font-size: 16px;
+    color: black;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+    .bungkus-donatur{
+        padding: 30px;
+        background-color: #EDF6F0;
+    }
+    .donatur{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .kiri{
+        display: flex;
+        align-items: start;
+        justify-content: start;
+        gap: 10px;
+        text-decoration: none;
+    }
+    .arrow{
+        width: 18px;
+    }
+    .kembali{
+        font-size: 14px;
+        color: #404040;
+    }
+    .button-atas-kanan{
+        display: flex;
+            align-items: center;
+            justify-content: space-between; 
+            width: 250px;
+    }
+    .simpan{
+        width: 120px;
+        height: 40px;
+        border: 1.5px solid #BFBFBF;
+        border-radius: 10px;
+        font-size: 12px;
+        background-color: transparent;
+    }
+    .verif{
+        width: 120px;
+        height: 40px;
+        border: 2px solid #BFBFBF;
+        border-radius: 10px;
+        font-size: 12px;
+        background-color: rgba(7, 141, 65, 0.8);
+        border: none;
+        color: white;
+    }
+    .info{
+        width: 120px;
+        height: 40px;
+        border-radius: 10px;
+        border: 2px solid #009B4C;
+        font-size: 12px;
+    }
+    .umum{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 210px;
+        margin-top: 30px;
+    }
+    .umum p{
+        color: #404040;
+        font-size: 12px;
+        text-decoration: none;
+        height: 8px;
+    }
+    
+    .putih{
+        background-color: white;
+        padding: 30px;
+        margin-top: 30px;
+        border-radius: 10px;
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+    }
+    .judul{
+        font-size: 18px;
+        color: black;
+    }
+    .nam-prog{
+        margin-top: -10px;
+        /* display: flex;
+        flex-direction: column;
+        justify-content: start;
+        gap: 5px; */
+    }
+    
+    
+    .form{
+        height: auto;
+        width: 50%;
+    }
+    .form-label{
+        font-size: 13px;
+        color: #404040;
+    }
+    .custom-icon {
+        border-right: none; /* Remove left border */
+        background-color: white;
+    }
+    
+    
+    
+    
+    
+    
+    .gambar{
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        gap: 20px;
+        height: 420px;
+        padding-left: 30px;
+    }
+    .inisiator{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: auto;
+    }
+    .gambar h1{
+        font-size: 18px;
+        color: black;
+        font-weight: bold;
+        width: "auto";
+    }
+    .gambar h2{
+        font-size: 14px;
+        color: #404040;
+    }
+    .gambar h3{
+        display: flex;
+        align-items: end;
+        justify-content: start;
+        gap: 20px;
+    }
+    .gambar h3 img{
+        width: 50px;
+    }
+    .gambar h3 p{
+        font-size: 12px;
+        color: black;
+    }
+    
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @media (max-width: 320px) {
+        .bungkus-donatur{
+            padding: 20px;
+            background-color: #EDF6F0;
+        }
+        .donatur{
+            display: block;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .kiri{
+            display: flex;
+            align-items: start;
+            justify-content: start;
+            gap: 10px;
+            text-decoration: none;
+        }
+        .arrow{
+            width: 18px;
+        }
+        .kembali{
+            font-size: 14px;
+            color: #404040;
+        }
+        .button-atas-kanan{
+            display: flex;
+                align-items: center;
+                justify-content: space-between; 
+                width: 100%;
+                padding-top: 10px;
+        }
+        .simpan{
+            width: 120px;
+            height: 40px;
+            border: 1.5px solid #BFBFBF;
+            border-radius: 10px;
+            font-size: 12px;
+            background-color: transparent;
+        }
+        .verif{
+            width: 120px;
+            height: 40px;
+            border: 2px solid #BFBFBF;
+            border-radius: 10px;
+            font-size: 12px;
+            background-color: rgba(7, 141, 65, 0.8);
+            border: none;
+            color: white;
+        }
+        .info{
+            width: 120px;
+            height: 40px;
+            border-radius: 10px;
+            border: 2px solid #009B4C;
+            font-size: 12px;
+        }
+        .umum{
+            display: flex;
+            align-items: end;
+            justify-content: start;
+            gap: 40px;
+            width: 100%;
+            margin-top: 30px;
+        }
+        .umum p{
+            color: #404040;
+            font-size: 12px;
+            text-decoration: none;
+        }
+        
+        .putih{
+            background-color: white;
+            padding: 30px;
+            margin-top: 30px;
+            border-radius: 10px;
+            display: block;
+            align-items: start;
+            justify-content: start;
+        }
+        .judul{
+            font-size: 18px;
+            color: black;
+            width: 100%;
+        }
+        .nam-prog{
+            margin-top: -10px;
+            /* display: flex;
+            flex-direction: column;
+            justify-content: start;
+            gap: 5px; */
+        }
+        
+        
+        .form{
+            height: auto;
+            width: 100%;
+        }
+        .form-label{
+            font-size: 13px;
+            color: #404040;
+        }
+        .custom-icon {
+            border-right: none; /* Remove left border */
+            background-color: white;
+        }
+        
+        
+        
+        
+        
+        
+        .gambar{
+            display: flex;  
+            height: 420px;
+            padding-top: 10px;
+            margin: auto;
+            width: 100%;
+            padding-left: 0px;
+        }
+        .inisiator{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: auto;
+            width: 100%;
+        }
+        .gambar h1{
+            font-size: 18px;
+            color: black;
+            font-weight: bold;
+            width: "auto";
+        }
+        .gambar h2{
+            font-size: 14px;
+            color: #404040;
+        }
+        .gambar h3{
+            display: flex;
+            align-items: end;
+            justify-content: start;
+            gap: 20px;
+        }
+        .gambar h3 img{
+            width: 50px;
+        }
+        .gambar h3 p{
+            font-size: 12px;
+            color: black;
+        }
+        
+        }
+
+
+
+
+
+
+
+
+
+
+    
