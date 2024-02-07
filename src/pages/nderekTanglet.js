@@ -1,8 +1,9 @@
 import React from "react";
 import '../css/nderektanglet.css'
 import Button from "react-bootstrap/Button";
+import Checkbox from "../components/checkbox";
 
-export default function NderekTanglet() {
+function NderekTanglet() {
     return (
         <div className="content">
                     <div className="luar">
@@ -11,7 +12,7 @@ export default function NderekTanglet() {
                                 Nderek Tanglet
                             </div>
                             <div className="kanan">
-                                <a href="/addCampaign" className="pencet">
+                                <a href="" className="pencet">
                                     Tambah Program
                                     <img src='../../assets/add.png' alt='add' className="add" />
                                 </a>
@@ -42,13 +43,14 @@ export default function NderekTanglet() {
                                     <thead>
                                         <tr className="title" style={{ width: "100%" }}>
                                             <th scope="col" style={{ padding: "1rem", width: "1000%" }} className="d-flex grid gap-2">
-                                                <div class="form-check">
+                                                {/* <div class="form-check">
                                                     <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
                                                         style={{ border: "1px solid #404040", width: "16px", height: "16px" }}
                                                     />
                                                     <label class="form-check-label" for="flexCheckDefault">
                                                     </label>
-                                                </div>
+                                                </div> */}
+                                                <Checkbox />
                                                 <img src="../../assets/arrow-down.svg">
                                                 </img>
                                                 <img src="../../assets/rotate.svg">
@@ -156,3 +158,4 @@ export default function NderekTanglet() {
                 </div>
     )
 }
+export default NderekTanglet;

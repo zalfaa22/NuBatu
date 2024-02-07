@@ -25,7 +25,7 @@ const Gridfoto = () => {
 
   return (
     <section>
-      <label style={{ fontSize: "14px", width: "100%", height: "260px", display: "flex", alignItems: "center", border: "2px dashed #808080" }}>
+      <label className="cover-label" style={{ fontSize: "14px", width: "100%", height: "260px", display: "flex", alignItems: "center", border: "2px dashed #808080" }}>
         <img src="../../assets/gallery.svg"></img>
         <h1 className='lg-d-flex'>
           <span style={{ marginRight: "5px", fontWeight: "bold", textAlign: "center" }}>Drag & drop image to upload, or</span>

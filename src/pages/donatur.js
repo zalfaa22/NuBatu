@@ -43,6 +43,7 @@ export default function Donatur() {
                       padding: "1rem",
                       fontWeight: "normal",
                       color: "#404040",
+                      width: "10px"
                     }}
                   >
                     No

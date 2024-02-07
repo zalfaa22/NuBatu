@@ -252,7 +252,7 @@
     
     .form{
         height: auto;
-        width: 50%;
+        width: 80%;
     }
     .form-label{
         font-size: 13px;
@@ -274,7 +274,7 @@
         justify-content: start;
         gap: 20px;
         height: 420px;
-        padding-left: 30px;
+        padding-left: 10px;
     }
     .inisiator{
         display: flex;

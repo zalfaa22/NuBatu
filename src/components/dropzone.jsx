@@ -52,10 +52,7 @@ const DragDropFiles = () => {
   alignItems: 'center',
   justifyContent: 'center',
   padding: '40px',
-  border: '2px solid #808080',
   height: '260px',
-  borderRadius: '10px',
-  borderStyle: 'dashed',
   textAlign: 'center',
   width: "100%",
   backgroundColor: "#F6FFF9",
@@ -94,8 +91,9 @@ return (
       className="dropzone"
       onDragOver={handleDragOver}
       onDrop={handleDrop}
+      style={containerStyle}
     >
-      <div style={containerStyle}>
+      <div>
         <img src="../../assets/gallery.svg" alt="Gallery" />
         <h1 style={{ fontSize: '14px', fontWeight: 'bold', textAlign: 'center' }}>
           Drag & drop image to upload, or{' '}
