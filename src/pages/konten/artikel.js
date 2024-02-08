@@ -9,7 +9,7 @@ export default function Artikel() {
         <div className="px-3 px-md-5 py-4">
           <div className="mb-4 mb-lg-5">
             <div className="d-flex justify-content-between">
-              <h2 className="fw-bold page-title">Berita</h2>
+              <h2 className="fw-bold page-title">Artikel</h2>
               <div className="d-flex">
                 {/* <Button
                   href="/addBerita"
