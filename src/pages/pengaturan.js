@@ -90,7 +90,7 @@ export default function Pengaturan() {
                 </div>
               </div>
             </div>
-            <Button variant="success">Simpan Perubahan</Button>{" "}
+            <Button variant="success" className="btn-setting">Simpan Perubahan</Button>{" "}
           </div>
         </div>
       </div>

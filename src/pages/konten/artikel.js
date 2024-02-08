@@ -7,10 +7,30 @@ export default function Artikel() {
   return (
       <div className="content vh-100" style={{ backgroundColor: "#EDF6F0" }}>
         <div className="px-3 px-md-5 py-4">
-          <div className="mb-5">
+          <div className="mb-4 mb-lg-5">
             <div className="d-flex justify-content-between">
-              <h2 className="fw-bold page-title">Artikel</h2>
+              <h2 className="fw-bold page-title">Berita</h2>
               <div className="d-flex">
+                {/* <Button
+                  href="/addBerita"
+                  variant="success"
+                  className="add-berita-btn "
+                >
+                  <div className="d-flex">
+                  <span className="add-berita-text">Tambah Berita</span>
+                  <img
+                    src="../../assets/berita/plus.svg"
+                    alt="add"
+                    className="ms-1 ms-md-2 add-icon"
+                  /></div>
+                </Button>{" "} */}
+                {/* <Button variant="success" className="add-berita-btn">Tambah Berita
+                <img
+                    src="../../assets/berita/plus.svg"
+                    alt="add"
+                    className="ms-1 ms-md-2 add-icon"
+                  />
+                </Button>{' '} */}
                 <img
                   src="../assets/berita/profile.svg"
                   className="profile-acc"
@@ -22,36 +42,36 @@ export default function Artikel() {
             <div className="d-flex justify-content-between">
               <div>
                 <Button
-                  variant="outline-success fs-6 fw-semibold text-black"
+                  variant="outline-success-none fw-semibold text-black"
                   className="berita-btn1"
                 >
-                  Success
+                  Semua
                 </Button>{" "}
-                <Button variant="outline-success-none fs-6 fw-semibold text-black" className="berita-btn2">
+                <Button variant="outline-success-none fw-normal text-black" className="berita-btn2">
                   Draft
                 </Button>{" "}
-                <Button variant="outline-success-none fs-6 fw-semibold text-black" className="berita-btn3">
+                <Button variant="outline-success-none fw-normal text-black" className="berita-btn3">
                   Publish
                 </Button>{" "}
-                <Dropdown className="dropdown-berita text-decoration-none">
-                  <Dropdown.Toggle variant="success" id="dropdown-basic">
+                <Dropdown className="dropdown-berita">
+                  <Dropdown.Toggle variant="success" id="dropdown-basic" className="dropdown-berita">
                     Success
                   </Dropdown.Toggle>
 
                   <Dropdown.Menu>
-                    <Dropdown.Item href="#/action-1">Draft</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Publish</Dropdown.Item>
+                    <Dropdown.Item href="#/action-1" className="dropdown-berita">Draft</Dropdown.Item>
+                    <Dropdown.Item href="#/action-2" className="dropdown-berita">Publish</Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown>
               </div>
-              <div className="">
+              <div >
                 <Button
-                  variant="outline-success fs-6 fw-semibold text-black"
-                  className="berita-btn"
+                  variant="outline-success-none fw-semibold text-black"
+                  className="search-berita"
                 >
                   Pencarian
                   <img
-                    className="ms-2"
+                    className="ms-2 search-icon-berita"
                     src="../assets/search-normal.svg"
                     alt="Search"
                   />

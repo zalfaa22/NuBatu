@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import "../css/dropzone.css";
 
 const DragDropFiles = () => {
   const [files, setFiles] = useState(null);
@@ -62,47 +63,52 @@ const DragDropFiles = () => {
 
   
 
-  if (files) {
-    return (
-      <div className="uploads">
-        <ul>
-          {/* {Array.from(files).map((file, idx) => (
-            <li key={idx}>{file.name}</li>
-          ))} */}
-        </ul>
-        <div className="image-previews">
-          {imagePreviews.map((preview, idx) => (
-            <img key={idx} src={preview} alt={`Preview ${idx}`} />
-          ))}
-        </div>
-        <div className="actions" style={{marginTop: "-34px", position: "absolute"}}>
-        <img onClick={() => setFiles(null)} src="../../assets/delete.svg" style={{padding: "8px", border: "1.5px solid red", borderBottomLeftRadius: "25%", backgroundColor: "#F9F5FF"}}></img>
-        </div>
-      </div>
-    );
-  }
-
+if (files) {
   return (
-    <>
-      <div
-        className="dropzone"
-        onDragOver={handleDragOver}
-        onDrop={handleDrop}
-      >
-        <div style={containerStyle}>
-      <img src="../../assets/gallery.svg" alt="Gallery" />
-      <h1 style={{ fontSize: '14px', fontWeight: 'bold', textAlign: 'center' }}>
-        Drag & drop image to upload, or{' '}
-        <span
-          style={{ color: '#0047FF', marginLeft: '5px', cursor: "pointer" }}
-          onClick={() => inputRef.current.click()}
-        >
-          browse
-        </span>
-      </h1>
-      <h2 style={{ fontSize: '12px', color: '#808080', textAlign: 'center' }}>
-        1208x840px size required in PNG or JPG format only, maximum 5MB.
-      </h2>
+    <div className="uploads">
+      <ul>
+        {/* {Array.from(files).map((file, idx) => (
+          <li key={idx}>{file.name}</li>
+        ))} */}
+      </ul>
+      <div className="image-previews">
+        {imagePreviews.map((preview, idx) => (
+          <img
+            key={idx}
+            src={preview}
+            alt={`Preview ${idx}`}
+            style={{ maxWidth: '410px', height: 'auto' }}
+          />
+        ))}
+      </div>
+      <div className="actions" style={{ marginTop: "-34px", position: "absolute" }}>
+        <img onClick={() => setFiles(null)} src="../../assets/delete.svg" style={{ padding: "8px", border: "1.5px solid red", borderBottomLeftRadius: "25%", backgroundColor: "#F9F5FF" }}></img>
+      </div>
+    </div>
+  );
+}
+
+return (
+  <>
+    <div
+      className="dropzone"
+      onDragOver={handleDragOver}
+      onDrop={handleDrop}
+    >
+      <div style={containerStyle}>
+        <img src="../../assets/gallery.svg" alt="Gallery" />
+        <h1 style={{ fontSize: '14px', fontWeight: 'bold', textAlign: 'center' }}>
+          Drag & drop image to upload, or{' '}
+          <span
+            style={{ color: '#0047FF', marginLeft: '5px', cursor: "pointer" }}
+            onClick={() => inputRef.current.click()}
+          >
+            browse
+          </span>
+        </h1>
+        <h2 style={{ fontSize: '12px', color: '#808080', textAlign: 'center' }}>
+          1208x840px size required in PNG or JPG format only, maximum 5MB.
+        </h2>
         <input
           type="file"
           multiple
@@ -111,11 +117,11 @@ const DragDropFiles = () => {
           // accept="image/png, image/jpeg"
           ref={inputRef}
         />
-        </div>
-        {/* <button onClick={() => inputRef.current.click()}>Select Files</button> */}
       </div>
-    </>
-  );
+      {/* <button onClick={() => inputRef.current.click()}>Select Files</button> */}
+    </div>
+  </>
+);
 };
 
 export default DragDropFiles;

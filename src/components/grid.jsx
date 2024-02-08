@@ -1,133 +1,85 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
+import "../css/grid.css";
 
-const DragDropFiles = () => {
-  const [files, setFiles] = useState(null);
-  const [imagePreviews, setImagePreviews] = useState([]);
-  const inputRef = useRef();
+const Gridfoto = () => {
+  const [selectedImages, setSelectedImages] = useState([]);
 
-  const handleDragOver = (event) => {
-    event.preventDefault();
-  };
-
-  const handleDrop = (event) => {
-    event.preventDefault();
-    const droppedFiles = event.dataTransfer.files;
-    setFiles(droppedFiles);
-    generateImagePreviews(droppedFiles);
-  };
-
-  const handleFileSelection = (event) => {
+  const onSelectFile = (event) => {
     const selectedFiles = event.target.files;
-    setFiles(selectedFiles);
-    generateImagePreviews(selectedFiles);
-  };
+    const selectedFilesArray = Array.from(selectedFiles);
 
-  const generateImagePreviews = (fileList) => {
-    const previews = [];
-  
-    const processFile = (file, index) => {
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        previews[index] = e.target.result;
-  
-        // If all previews are loaded, update the state
-        if (index === fileList.length - 1) {
-          setImagePreviews([...previews]);
-        }
-      };
-      reader.readAsDataURL(file);
-    };
-  
-    Array.from(fileList).forEach((file, idx) => {
-      processFile(file, idx);
+    const imagesArray = selectedFilesArray.map((file) => {
+      return URL.createObjectURL(file);
     });
+
+    setSelectedImages((previousImages) => previousImages.concat(imagesArray));
+
+    // FOR BUG IN CHROME
+    event.target.value = "";
   };
 
-  
-  const handleUpload = () => {
-    // Your upload logic here
-    // e.g., send files to the server using FormData
-    // const formData = new FormData();
-    // formData.append("Files", files);
-    // fetch("link", {
-    //   method: "POST",
-    //   body: formData
-    // });
-    setFiles(null);
-  };
-
-  
-
-  const containerStyle = {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: '40px',
-    border: '2px solid #808080',
-    height: '260px',
-    borderRadius: '10px',
-    borderStyle: 'dashed',
-    textAlign: 'center',
-    width: "100%",
-    backgroundColor: "#F6FFF9",
-  };
-
-  if (files) {
-    return (
-      <div className="uploads">
-        <ul>
-          {/* {Array.from(files).map((file, idx) => (
-            <li key={idx}>{file.name}</li>
-          ))} */}
-        </ul>
-        <div className="image-previews">
-          {imagePreviews.map((preview, idx) => (
-            <img key={idx} src={preview} alt={`Preview ${idx}`} style={{ maxWidth: '100%', maxHeight: '200px' }} />
-          ))}
-        </div>
-        <div className="actions" style={{marginTop: "10px"}}>
-          <button onClick={() => setFiles(null)} style={{marginRight: "10px", border: "1.5px solid red", borderRadius: "8px", padding: "5px", width: "90px", backgroundColor: "transparent"}}>Cancel</button>
-          <button onClick={handleUpload} style={{marginRight: "10px", border: "1.5px solid #009B4C", borderRadius: "8px", padding: "5px", width: "90px", backgroundColor: "transparent"}}>Upload</button>
-        </div>
-      </div>
-    );
+  function deleteHandler(image) {
+    setSelectedImages(selectedImages.filter((e) => e !== image));
+    URL.revokeObjectURL(image);
   }
 
   return (
-    <>
-      <div
-        className="dropzone"
-        onDragOver={handleDragOver}
-        onDrop={handleDrop}
-      >
-        <div style={containerStyle}>
-          <img src="../../assets/gallery.svg" alt="Gallery" />
-          <h1 style={{ fontSize: '14px', fontWeight: 'bold', textAlign: 'center', marginTop: "5px" }}>
-            Drag & drop image to upload, or{' '}
-            <span
-              style={{ color: '#0047FF', marginLeft: '5px', cursor: "pointer" }}
-              onClick={() => inputRef.current.click()}
-            >
-              browse
+    <section>
+      <label style={{ fontSize: "14px", width: "100%", height: "260px", display: "flex", alignItems: "center", border: "2px dashed #808080" }}>
+        <img src="../../assets/gallery.svg"></img>
+        <h1 className='lg-d-flex'>
+          <span style={{ marginRight: "5px", fontWeight: "bold", textAlign: "center" }}>Drag & drop image to upload, or</span>
+          <span style={{ fontSize: "14px", color: "#0047FF", fontWeight: "bold" }}>browse</span>
+        </h1>
+        <span style={{ fontSize: "12px", color: "#808080", fontWeight: "600", marginTop: "-10px" }}>1208x840px size required in PNG or JPG format only, maximum 5MB.</span>
+        <input
+          type="file"
+          name="images"
+          onChange={onSelectFile}
+          multiple
+          accept="image/png , image/jpeg, image/webp"
+        />
+      </label>
+      <br />
+
+      <input type="file" multiple />
+
+      {selectedImages.length > 0 &&
+        (selectedImages.length > 5 ? (
+          <p className="error">
+            Anda tidak dapat mengunggah lebih dari 5 gambar! <br />
+            <span>
+              Hapus <b> {selectedImages.length - 5} </b> gambar{" "}
             </span>
-          </h1>
-          <h2 style={{ fontSize: '12px', color: '#808080', textAlign: 'center' }}>
-            1208x840px size required in PNG or JPG format only, maximum 5MB.
-          </h2>
-          <input
-            type="file"
-            multiple
-            onChange={handleFileSelection}
-            hidden
-            // accept="image/png, image/jpeg"
-            ref={inputRef}
-          />
-        </div>
-        {/* <button onClick={() => inputRef.current.click()}>Select Files</button> */}
+          </p>
+        ) : (
+          <button
+            className="upload-btn"
+            onClick={() => {
+              console.log(selectedImages);
+            }}
+          >
+            UPLOAD {selectedImages.length} IMAGE
+            {selectedImages.length === 1 ? "" : "S"}
+          </button>
+        ))}
+
+      <div className="images" style={{justifyContent: "start"}}>
+        {selectedImages &&
+          selectedImages.map((image, index) => {
+            return (
+              <div key={image} className="image">
+                <img src={image} height="200" alt="upload" />
+                <button onClick={() => deleteHandler(image)}>
+                  <img src="../../assets/delete.svg" style={{width: "20px", marginTop: "10px"}}></img>
+                </button>
+                <p style={{marginTop: "10px"}}>{index + 1}</p>
+              </div>
+            );
+          })}
       </div>
-    </>
+    </section>
   );
 };
 
-export default DragDropFiles;
+export default Gridfoto;
