@@ -49,7 +49,7 @@ export default function Login() {
                 </div>
                 <div className="form-outline mb-4">
                   <label className="form-label fs-6" htmlFor="form2Example18">
-                    Email address
+                    Password
                   </label>
                   <input
                     type="email"

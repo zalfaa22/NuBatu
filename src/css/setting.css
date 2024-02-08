@@ -1,14 +1,14 @@
 .page-title {
-    font-size: 27px !important;
+    font-size: 23px !important;
 }
 .setting-title {
-    font-size: 19px;
+    font-size: 14px;
 }
 .text1-set {
-    font-size: 15px;
+    font-size: 12px;
 }
 .text2-set {
-    font-size: 12px;
+    font-size: 10px;
     color: #404040;
 }
 .profile-acc {
@@ -17,19 +17,27 @@
 .profile-set-img {
     width: 4rem;
 }
+button.btn-setting {
+    margin-right: 2px;
+    margin-left: 2px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    font-size: 11px;
+    background-color: #078D41;
+}
 
 @media (min-width: 425px) {
     .page-title {
-        font-size: 36px !important;
+        font-size: 30px !important;
     }
     .setting-title {
-        font-size: 25px;
-    }
-    .text1-set {
         font-size: 20px;
     }
+    .text1-set {
+        font-size: 15px;
+    }
     .text2-set {
-        font-size: 14px;
+        font-size: 12px;
         color: #404040;
     }
     .profile-acc {
@@ -37,6 +45,13 @@
     }
     .profile-set-img {
         width: 4.5rem;
+    }
+    button.btn-setting {
+        margin-right: 2px;
+        margin-left: 2px;
+        margin-top: 2px;
+        margin-bottom: 2px;
+        font-size: 13px;
     }
 }
 
@@ -57,6 +72,13 @@
     }
     .profile-set-img {
         width: 8rem;
+    }
+    button.btn-setting {
+        margin-right: 2px;
+        margin-left: 2px;
+        margin-top: 2px;
+        margin-bottom: 2px;
+        font-size: 16px;
     }
 }
 

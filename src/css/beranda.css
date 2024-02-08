@@ -66,7 +66,7 @@
         height: auto;
     }
     .bungkus{
-        width:50%;
+        width:60%;
     }
     .judul{
         color : #078D41;
@@ -98,7 +98,7 @@
         padding-bottom: 5px;
     }
     .img-nu{
-        width: 300px;
+        width: 150px;
     }
 }
 
@@ -155,7 +155,6 @@
         margin-top: 50px;
     }
 }
-
 
 
 

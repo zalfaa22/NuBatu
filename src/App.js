@@ -11,6 +11,7 @@ import NderekTanglet from "./pages/nderekTanglet";
 import DetailChat from "./pages/detailChat";
 import Berita from "./pages/konten/berita";
 import AddBerita from "./pages/konten/addBerita";
+import EditBerita from "./pages/konten/editBerita";
 import Artikel from "./pages/konten/artikel";
 import Event from "./pages/konten/event";
 import Pengaturan from "./pages/pengaturan";
@@ -36,6 +37,7 @@ function App() {
           <Route path="/detailChat" Component={DetailChat} />
           <Route path="/berita" Component={Berita} />
           <Route path="/addBerita" Component={AddBerita} />
+          <Route path="/editBerita" Component={EditBerita} />
           <Route path="/artikel" Component={Artikel} />
           <Route path="/event" Component={Event} />
           <Route path="/pengaturan" Component={Pengaturan} />
