@@ -78,7 +78,7 @@ export default function AddBerita() {
                   <img
                     src="../assets/berita/gallery-icon.svg"
                     alt="Gallery icon"
-                    className="dragdrop-img"
+                    className="dragdrop-img-icon"
                   />
                   <div className="d-flex fw-bold text-center">
                     <p className="dragdrop-text1">
