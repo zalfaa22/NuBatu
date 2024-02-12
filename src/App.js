@@ -15,6 +15,7 @@ import Artikel from "./pages/konten/artikel";
 import Event from "./pages/konten/event";
 import Pengaturan from "./pages/pengaturan";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import Defaulthideshow from "./pages/coba";
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
           <Route path="/artikel" Component={Artikel} />
           <Route path="/event" Component={Event} />
           <Route path="/pengaturan" Component={Pengaturan} />
+          <Route path="/coba" Component={Defaulthideshow} />
         </Routes>
       </div>
     </>

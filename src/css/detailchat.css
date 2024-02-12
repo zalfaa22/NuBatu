@@ -16,6 +16,176 @@
 }
 .oren{
     align-items: start;
+    display: flex;
+    justify-content: start;
+    gap: 20px;
+    padding: 0;
+}
+.za{
+    width: 20%;
+    height: 30%;
+    margin-left: -30px;
+    left: 0px;
+}
+.nama-chat{
+    font-size: 20px;
+}
+.pertanyaan{
+    font-size: 15px;
+    color: #404040;
+    font-weight: normal;
+}
+.tgl-tanya{
+    font-size: 13px;
+    color: #808080;
+    font-weight: normal;
+}
+.jawaban .reply{
+    position: absolute;
+    top: 35px;
+    right: 30px;
+    background-color: #009B4C;
+    width: 80px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    font-size: 12px;
+    color: white;
+}
+    .form-control::placeholder {
+    font-size: 14px;
+    color: #999;
 }
 
 }
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+    .bungkus-chat{
+        padding: 40px;
+    }
+    .arrow{
+        display: flex;
+        align-items: start;
+        justify-content: start;
+        gap: 10px;
+    }
+    .bungkus-ziyad{
+        background-color: white;
+        padding: 40px;
+        border-radius: 20px;
+        margin-top:40px;
+    }
+    .oren{
+        align-items: start;
+        display: flex;
+        justify-content: start;
+        gap: 20px;
+        padding: 0;
+    }
+    .za{
+        width: 30%;
+        height: 30%;
+        margin-left: -30px;
+        left: 0px;
+    }
+    .nama-chat{
+        font-size: 18px;
+    }
+    .pertanyaan{
+        font-size: 13px;
+        color: #404040;
+        font-weight: normal;
+    }
+    .tgl-tanya{
+        font-size: 11px;
+        color: #808080;
+        font-weight: normal;
+    }
+    .jawaban .reply{
+        position: absolute;
+        top: 35px;
+        right: 10px;
+        background-color: #009B4C;
+        width: 60px;
+        height: 30px;
+        border-radius: 5px;
+        border: none;
+        font-size: 10px;
+        color: white;
+    }
+        .form-control::placeholder {
+        font-size: 12px;
+        color: #999;
+    }
+    
+    }
+
+
+
+
+
+
+    @media (max-width: 320px) {
+        .bungkus-chat{
+            padding: 40px;
+        }
+        .arrow{
+            display: flex;
+            align-items: start;
+            justify-content: start;
+            gap: 10px;
+        }
+        .bungkus-ziyad{
+            background-color: white;
+            padding: 20px;
+            border-radius: 20px;
+            margin-top:40px;
+        }
+        .oren{
+            display: block;
+        }
+        .za{
+            margin-left: -10px;
+            margin-bottom: 10px;
+        }
+        .nama-chat{
+            font-size: 15px;
+        }
+        .pertanyaan{
+            font-size: 12px;
+            color: #404040;
+            font-weight: normal;
+        }
+        .tgl-tanya{
+            font-size: 11px;
+            color: #808080;
+            font-weight: normal;
+        }
+        .jawaban .reply{
+            position: absolute;
+            top: 35px;
+            right: 10px;
+            background-color: #009B4C;
+            width: 50px;
+            height: 25px;
+            border-radius: 5px;
+            border: none;
+            font-size: 10px;
+            color: white;
+        }
+
+            .form-control::placeholder {
+            font-size: 12px;
+            color: #999;
+            text-align: center;
+        }
+  
+        
+        }
