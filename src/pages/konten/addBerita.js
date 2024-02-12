@@ -1,8 +1,8 @@
 import React, { useState, useRef } from "react";
 import Button from "react-bootstrap/Button";
 import TextEditor from "../../components/textEditor";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 import "../../css/addberita.css";
 
 export default function AddBerita() {
