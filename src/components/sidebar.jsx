@@ -7,6 +7,7 @@ function Sidebar() {
   const [minimized, setMinimized] = useState(false);
   const [submenuOpen, setSubmenuOpen] = useState(false);
   const [submenu2Open, setSubmenu2Open] = useState(false);
+  const [activeMenu, setActiveMenu] = useState('beranda');
 
 
   const toggleSubmenu = () => {
