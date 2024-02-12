@@ -26,9 +26,6 @@ export default function Beranda() {
                     </div>
                     <div class="h5 mb-0 font-weight-bold text-gray-800">10</div>
                   </div>
-                  <div class="col-auto">
-                    <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                  </div>
                 </div>
               </div>
             </div>
@@ -46,9 +43,6 @@ export default function Beranda() {
                       228
                     </div>
                   </div>
-                  <div class="col-auto">
-                    <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
-                  </div>
                 </div>
               </div>
             </div>
@@ -64,9 +58,6 @@ export default function Beranda() {
                     </div>
                     <div class="h5 mb-0 font-weight-bold text-gray-800">28</div>
                   </div>
-                  <div class="col-auto">
-                    <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
-                  </div>
                 </div>
               </div>
             </div>
@@ -81,9 +72,6 @@ export default function Beranda() {
                       Anggota
                     </div>
                     <div class="h5 mb-0 font-weight-bold text-gray-800">62</div>
-                  </div>
-                  <div class="col-auto">
-                    <i class="fas fa-comments fa-2x text-gray-300"></i>
                   </div>
                 </div>
               </div>
