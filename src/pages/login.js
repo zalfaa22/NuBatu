@@ -38,10 +38,10 @@ export default function Login() {
                 </p>
                 <div className="form-outline mb-3 mt-5">
                   <label className="form-label fs-6" htmlFor="form2Example18">
-                    Email address
+                    User
                   </label>
                   <input
-                    type="email"
+                    type="name"
                     id="form2Example18"
                     className="form-control form-control-lg fs-6"
                     placeholder="nama user"
