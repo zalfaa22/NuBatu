@@ -64,28 +64,28 @@ export default function Event() {
                 <img
                   src="../../assets/berita/youtube.svg"
                   alt="Youtube Icon"
-                  className="me-2 img-fluid"
+                  className="me-2 img-fluid event-img"
                 />
-                <p className="fw-bold m-0">Youtube Video</p>
+                <p className="fw-bold m-0 event-title">Youtube Video</p>
               </div>
               <div className="d-flex">
-              <div className="d-flex align-items-center pe-5 me-2">
+              <div className="d-flex align-items-center me-2">
                   <div
                     className={`switch-button ${switchState1 ? "off" : "on"}`}
                     onClick={toggleSwitch1}>
                     <div className={`slider ${switchState1 ? "off" : "on"}`} />
                   </div>
                 </div>
-                <div className="d-flex align-items-center me-3">
-                  <button className="edit-btn" onClick={handleEditClick}>
-                    <img src="../assets/berita/edit-icon.svg" />
-                    <span className="ms-1">Edit</span>
+                <div className="d-flex align-items-center ">
+                  <button className="edit-btn-event" onClick={handleEditClick}>
+                    <img src="../assets/berita/edit-icon.svg" className="edit-delete-icon"/>
+                    <span className="ms-1 edit-delete-text">Edit</span>
                   </button>
                 </div>
                 <div className="d-flex align-items-center">
-                  <button className="del-btn">
-                    <img src="../assets/berita/trash-icon.svg" />
-                    <span className="ms-1">Hapus</span>
+                  <button className="del-btn-event">
+                    <img src="../assets/berita/trash-icon.svg"  className="edit-delete-icon"/>
+                    <span className="ms-1 edit-delete-text">Hapus</span>
                   </button>
                 </div>
               </div>
@@ -97,28 +97,28 @@ export default function Event() {
                 <img
                   src="../../assets/berita/instagram.svg"
                   alt="Youtube Icon"
-                  className="me-2 img-fluid"
+                  className="me-2 img-fluid event-img"
                 />
-                <p className="fw-bold m-0">Instagram post</p>
+                <p className="fw-bold m-0 event-title">Instagram post</p>
               </div>
               <div className="d-flex">
-                <div className="d-flex align-items-center pe-5 me-2">
+              <div className="d-flex align-items-center me-2">
                   <div
                     className={`switch-button ${switchState2 ? "off" : "on"}`}
-                    onClick={toggleSwitch2}>
+                    onClick={toggleSwitch1}>
                     <div className={`slider ${switchState2 ? "off" : "on"}`} />
                   </div>
                 </div>
-                <div className="d-flex align-items-center me-3">
-                  <button className="edit-btn">
-                    <img src="../assets/berita/edit-icon.svg" />
-                    <span className="ms-1">Edit</span>
+                <div className="d-flex align-items-center ">
+                  <button className="edit-btn-event" onClick={handleEditClick}>
+                    <img src="../assets/berita/edit-icon.svg" className="edit-delete-icon"/>
+                    <span className="ms-1 edit-delete-text">Edit</span>
                   </button>
                 </div>
                 <div className="d-flex align-items-center">
-                  <button className="del-btn">
-                    <img src="../assets/berita/trash-icon.svg" />
-                    <span className="ms-1">Hapus</span>
+                  <button className="del-btn-event">
+                    <img src="../assets/berita/trash-icon.svg"  className="edit-delete-icon"/>
+                    <span className="ms-1 edit-delete-text">Hapus</span>
                   </button>
                 </div>
               </div>
@@ -130,28 +130,28 @@ export default function Event() {
                 <img
                   src="../../assets/berita/instagram.svg"
                   alt="Youtube Icon"
-                  className="me-2 img-fluid"
+                  className="me-2 img-fluid event-img"
                 />
-                <p className="fw-bold m-0">Instagram post</p>
+                <p className="fw-bold m-0 event-title">Instagram post</p>
               </div>
               <div className="d-flex">
-              <div className="d-flex align-items-center pe-5 me-2">
+              <div className="d-flex align-items-center me-2">
                   <div
                     className={`switch-button ${switchState3 ? "off" : "on"}`}
-                    onClick={toggleSwitch3}>
+                    onClick={toggleSwitch1}>
                     <div className={`slider ${switchState3 ? "off" : "on"}`} />
                   </div>
                 </div>
-                <div className="d-flex align-items-center me-3">
-                  <button className="edit-btn">
-                    <img src="../assets/berita/edit-icon.svg" />
-                    <span className="ms-1">Edit</span>
+                <div className="d-flex align-items-center ">
+                  <button className="edit-btn-event" onClick={handleEditClick}>
+                    <img src="../assets/berita/edit-icon.svg" className="edit-delete-icon"/>
+                    <span className="ms-1 edit-delete-text">Edit</span>
                   </button>
                 </div>
                 <div className="d-flex align-items-center">
-                  <button className="del-btn">
-                    <img src="../assets/berita/trash-icon.svg" />
-                    <span className="ms-1">Hapus</span>
+                  <button className="del-btn-event">
+                    <img src="../assets/berita/trash-icon.svg"  className="edit-delete-icon"/>
+                    <span className="ms-1 edit-delete-text">Hapus</span>
                   </button>
                 </div>
               </div>
@@ -188,9 +188,9 @@ export default function Event() {
           value={selectedType}
           onChange={handleTypeChange}
         >
-          <option value="">Pilih...</option>
-          <option value="tipe1">Tipe 1</option>
-          <option value="tipe2">Tipe 2</option>
+          {/* <option value="">Pilih...</option> */}
+          <option value="tipe1">Youtube</option>
+          <option value="tipe2">Instagram</option>
           {/* Tambahkan opsi lainnya sesuai kebutuhan */}
         </select>
       </div>
