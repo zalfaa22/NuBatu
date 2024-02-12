@@ -4,71 +4,115 @@ import Dropdown from "react-bootstrap/Dropdown";
 import "../../css/berita.css";
 
 export default function Berita() {
+  const [statusBerita, setStatusBerita] = useState('semua');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [searchMode, setSearchMode] = useState(false);
+
+  const handleStatusBeritaClick = (status) => {
+    setStatusBerita(status);
+  };
+
+  const handleSearchClick = () => {
+    setSearchMode(true);
+  };
+
+  const handleSearchChange = (event) => {
+    setSearchQuery(event.target.value);
+  };
+
+  const handleSearchSubmit = (event) => {
+    event.preventDefault();
+    // Perform search logic here
+    console.log('Search Query:', searchQuery);
+  };
+
+  // Dummy data berita
+  const daftarBerita = [
+    { judul: "Rapat perencanaan Kick Off Reseosi 1 Abad, dihadiri oleh ...", status: "draft", jurnalis: "W. Nadia", tanggal: "Feb 05, 2023", gambar: "../assets/berita/1.svg" },
+    { judul: "Kick Off Resepsi 1 Abad, PCNU Kota Batu Siapkan Beragam ...", status: "publish", jurnalis: "AH Baharuddin", tanggal: "Sep 13, 2023", gambar: "../assets/berita/2.svg" },
+    // Tambahkan berita lainnya di sini
+  ];
+
+  const filteredBerita = daftarBerita.filter((berita) => {
+    if (statusBerita === 'semua') {
+      return true; // Tampilkan semua berita
+    } else if (statusBerita === 'draft') {
+      return berita.status === 'draft'; // Tampilkan hanya berita yang berstatus draft
+    } else if (statusBerita === 'publish') {
+      return berita.status === 'publish'; // Tampilkan hanya berita yang berstatus publish
+    }
+  }).filter((berita) => {
+    // Filter based on search query
+    return berita.judul.toLowerCase().includes(searchQuery.toLowerCase()) ||
+           berita.jurnalis.toLowerCase().includes(searchQuery.toLowerCase()) ||
+           berita.tanggal.toLowerCase().includes(searchQuery.toLowerCase());
+  });
+
   return (
-      <div className="content vh-100" style={{ backgroundColor: "#EDF6F0" }}>
-        <div className="px-3 px-md-5 py-4">
-          <div className="mb-4 mb-lg-5">
-            <div className="d-flex justify-content-between">
-              <h2 className="fw-bold page-title">Berita</h2>
-              <div className="d-flex">
-                {/* <Button
-                  href="/addBerita"
-                  variant="success"
-                  className="add-berita-btn "
-                >
-                  <div className="d-flex">
-                  <span className="add-berita-text">Tambah Berita</span>
-                  <img
-                    src="../../assets/berita/plus.svg"
-                    alt="add"
-                    className="ms-1 ms-md-2 add-icon"
-                  /></div>
-                </Button>{" "} */}
-                <a href="/addberita">
+    <div className="content vh-100" style={{ backgroundColor: "#EDF6F0" }}>
+      <div className="px-3 px-md-5 py-4">
+        <div className="mb-4 mb-lg-5">
+          <div className="d-flex justify-content-between">
+            <h2 className="fw-bold page-title">Berita</h2>
+            <div className="d-flex">
+              <a href="/addberita">
                 <Button variant="success" className="add-berita-btn">Tambah Berita
-                <img
-                    src="../../assets/berita/plus.svg"
-                    alt="add"
-                    className="ms-1 ms-md-2 add-icon"
-                  />
-                </Button>{' '}</a>
-                <img
-                  src="../assets/berita/profile.svg"
-                  className="profile-acc"
-                />
-              </div>
+                  <img
+                      src="../../assets/berita/plus.svg"
+                      alt="add"
+                      className="ms-1 ms-md-2 add-icon"
+                    />
+                </Button>{' '}
+              </a>
+              <img
+                src="../assets/berita/profile.svg"
+                className="profile-acc"
+              />
             </div>
           </div>
-          <div className="mb-0">
-            <div className="d-flex justify-content-between">
-              <div>
-                <Button
-                  variant="outline-success-none fw-semibold text-black"
-                  className="berita-btn1"
-                >
-                  Semua
-                </Button>{" "}
-                <Button variant="outline-success-none fw-normal text-black" className="berita-btn2">
-                  Draft
-                </Button>{" "}
-                <Button variant="outline-success-none fw-normal text-black" className="berita-btn3">
-                  Publish
-                </Button>{" "}
-                <Dropdown className="dropdown-berita">
-                  <Dropdown.Toggle variant="success" id="dropdown-basic" className="dropdown-berita">
-                    Success
-                  </Dropdown.Toggle>
+        </div>
+        <div className="mb-0">
+          <div className="d-flex justify-content-between">
+            <div>
+              <Button
+                variant={`outline-success-none fw-semibold text-black ${statusBerita === 'semua' && 'active'}`}
+                className="berita-btn2"
+                onClick={() => handleStatusBeritaClick('semua')}
+              >
+                Semua
+              </Button>{" "}
+              <Button
+                variant={`outline-success-none fw-normal text-black ${statusBerita === 'draft' && 'active'}`}
+                className="berita-btn2"
+                onClick={() => handleStatusBeritaClick('draft')}
+              >
+                Draft
+              </Button>{" "}
+              <Button
+                variant={`outline-success-none fw-normal text-black ${statusBerita === 'publish' && 'active'}`}
+                className="berita-btn3"
+                onClick={() => handleStatusBeritaClick('publish')}
+              >
+                Publish
+              </Button>{" "}
+              <Dropdown className="dropdown-berita">
+                <Dropdown.Toggle variant="success" id="dropdown-basic" className="dropdown-berita">
+                  Filter
+                </Dropdown.Toggle>
 
-                  <Dropdown.Menu>
-                    <Dropdown.Item href="#/action-1" className="dropdown-berita">Draft</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2" className="dropdown-berita">Publish</Dropdown.Item>
-                  </Dropdown.Menu>
-                </Dropdown>
-              </div>
-              <div >
+                <Dropdown.Menu>
+                <Dropdown.Item onClick={() => handleStatusBeritaClick('semua')} className="dropdown-berita">Semua</Dropdown.Item>
+                  <Dropdown.Item onClick={() => handleStatusBeritaClick('draft')} className="dropdown-berita">Draft</Dropdown.Item>
+                  <Dropdown.Item onClick={() => handleStatusBeritaClick('publish')} className="dropdown-berita">Publish</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+            </div>
+            <div >
+              {!searchMode ? (
                 <Button
                   variant="outline-success-none fw-semibold text-black"
                   className="search-berita"
+                  onClick={handleSearchClick}
                 >
                   Pencarian
                   <img
@@ -76,40 +120,52 @@ export default function Berita() {
                     src="../assets/search-normal.svg"
                     alt="Search"
                   />
-                </Button>{" "}
-              </div>
+                </Button>
+              ) : (
+                <form onSubmit={handleSearchSubmit}>
+                  <input
+                    type="text"
+                    className="form-control search-input"
+                    placeholder="Cari berita..."
+                    value={searchQuery}
+                    onChange={handleSearchChange}
+                  />
+                  {/* <button type="submit" className="btn btn-primary mt-2">Cari</button> */}
+                </form>
+              )}
             </div>
           </div>
-          <div className="">
-            <div class="table-container-berita">
-              <table class="table custom-table">
-                <thead>
-                  <tr className="title">
-                    <th scope="col" style={{ padding: "1rem" }}>
-                      Judul
-                    </th>
-                    <th scope="col" style={{ padding: "1rem" }}>
-                      Status
-                    </th>
-                    <th scope="col" style={{ padding: "1rem" }}>
-                      Jurnalis
-                    </th>
-                    <th
-                      scope="col"
-                      style={{ padding: "1rem", textAlign: "end" }}
-                    >
-                      Tanggal
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
+        </div>
+        <div className="">
+          <div class="table-container-berita">
+            <table class="table custom-table">
+              <thead>
+                <tr className="title">
+                  <th scope="col" style={{ padding: "1rem" }}>
+                    Judul
+                  </th>
+                  <th scope="col" style={{ padding: "1rem" }}>
+                    Status
+                  </th>
+                  <th scope="col" style={{ padding: "1rem" }}>
+                    Jurnalis
+                  </th>
+                  <th
+                    scope="col"
+                    style={{ padding: "1rem", textAlign: "end" }}
+                  >
+                    Tanggal
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {filteredBerita.map((berita, index) => (
+                  <tr key={index}>
                     <th scope="row" className=" d-flex p-3 align-items-center">
-                      <img src="../assets/berita/1.svg" className="pe-3"></img>
+                    <img src={berita.gambar} className="pe-3" style={{ width: '100px'}}></img>
                       <div className="d-block ">
                         <span className="title fw-semibold pt-5">
-                          Kick Off Resepsi 1 Abad, PCNU Kota Batu Siapkan
-                          Beragam ...
+                          {berita.judul}
                         </span>
                         <div className="title fw-lighter d-flex  pt-1">
                           <a href="/editberita">
@@ -132,59 +188,18 @@ export default function Berita() {
                     <td>
                       <div className="pt-2 me-5">
                         <img
-                          src="../assets/berita/draft.svg"
+                          src={`../assets/berita/${berita.status}.svg`}
                           className=""
                         ></img>
                       </div>
                     </td>
-                    <td className="text-1 fw-normal py-3">W. Nadia</td>
+                    <td className="text-1 fw-normal py-3">{berita.jurnalis}</td>
                     <td className="text-1 fw-slug text-end py-3">
-                      Okt 05, 2023
+                      {berita.tanggal}
                     </td>
                   </tr>
-                  <tr>
-                    <th scope="row" className=" d-flex p-3 align-items-center">
-                      <img src="../assets/berita/2.svg" className="pe-3"></img>
-                      <div className="d-block ">
-                        <span className="title fw-semibold">
-                          Kick Off Resepsi 1 Abad, PCNU Kota Batu Siapkan
-                          Beragam ...
-                        </span>
-                        <div className="title fw-lighter d-flex pt-1">
-                          <div>
-                            <a href="#">
-                              <button className="edit-btn">
-                                <img src="../assets/berita/edit-icon.svg" />
-                                <span className="ms-1">edit</span>
-                              </button>
-                            </a>
-                          </div>
-                          <div className="ms-4">
-                            <a href="#">
-                              <button className="del-btn">
-                                <img src="../assets/berita/trash-icon.svg" />
-                                <span className="ms-1">hapus</span>
-                              </button>
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </th>
-                    <td>
-                      <div className="pt-2 me-5">
-                        <img
-                          src="../assets/berita/publish.svg"
-                          className=""
-                        ></img>
-                      </div>
-                    </td>
-                    <td className="text-1 fw-normal py-3">AH Baharuddin</td>
-                    <td className="text-1 fw-slug text-end p-3">
-                      Okt 05, 2023
-                    </td>
-                  </tr>
-
-                  <tr>
+                ))}
+                <tr>
                     <th colspan="3" className="text-1 fw-normal ps-3 pt-3">
                       Page 1 of 1
                     </th>
@@ -200,11 +215,11 @@ export default function Berita() {
                       </Button>{" "}
                     </td>
                   </tr>
-                </tbody>
-              </table>
-            </div>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
+    </div>
   );
 }
