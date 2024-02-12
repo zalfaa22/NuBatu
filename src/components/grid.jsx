@@ -29,7 +29,7 @@ const Gridfoto = () => {
         <img src="../../assets/gallery.svg"></img>
         <h1 className='lg-d-flex'>
           <span className="judul-drag" style={{ marginRight: "5px", fontWeight: "bold", textAlign: "center" }}>Drag & drop image to upload, or</span>
-          <span style={{ fontSize: "14px", color: "#0047FF", fontWeight: "bold" }}>browse</span>
+          <span className="browse" style={{ fontSize: "14px", color: "#0047FF", fontWeight: "bold" }}>browse</span>
         </h1>
         <span style={{ fontSize: "12px", color: "#808080", fontWeight: "600", marginTop: "-10px" }}>1208x840px size required in PNG or JPG format only, maximum 5MB.</span>
         <input
@@ -65,7 +65,7 @@ const Gridfoto = () => {
           </button>
         ))}
 
-      <div className="images" style={{justifyContent: "start"}}>
+      <div className="images" style={{justifyContent: "space-between"}}>
         {selectedImages &&
           selectedImages.map((image, index) => {
             return (

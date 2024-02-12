@@ -134,7 +134,7 @@
 
     @media (max-width: 320px) {
         .bungkus-chat{
-            padding: 40px;
+            padding: 20px;
         }
         .arrow{
             display: flex;

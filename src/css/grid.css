@@ -1,4 +1,5 @@
-section {
+  @media (max-width: 1440px){
+     .bungkus-grid {
     padding: 2rem 0;
   }
   
@@ -10,7 +11,7 @@ section {
     align-items: center;
     border: 1px dotted black;
     border-radius: 20px;
-    width: 10rem;
+    width: 100%;
     height: 10rem;
     cursor: pointer;
     font-size: large;
@@ -93,7 +94,63 @@ section {
   .error span {
     color: red;
   }
+  }
+ 
   
+
+  @media (max-width: 768px) {
+    .bungkus-grid{
+      width: 100%;
+    }
+    .image img {
+      width: 170px;
+      height: auto;
+    }
+    label.cover-label  {
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border: 1px dotted black;
+      border-radius: 20px;
+      width: 200px;
+      cursor: pointer;
+      font-size: large;
+      text-align: center;
+      padding: 15px;
+    }
+    
+    label span {
+      font-weight: lighter;
+      font-size: auto;
+      padding-top: 0.5rem;
+      text-align: center;
+      width: 150px;
+    }
+
+    .judul-drag {
+      margin-right: 5px;
+      font-weight: bold;
+      text-align: center;
+    }
+    
+
+    .upload-btn {
+      cursor: pointer;
+      display: block;
+      margin: 0 auto;
+      border: none;
+      border-radius: 10px;
+      width: 8rem;
+      height: 2rem;
+      color: white;
+      background-color: green;
+      font-size: 10px;
+    }
+
+  }
+
 
 
   @media (max-width: 320px) {
@@ -116,7 +173,7 @@ section {
       cursor: pointer;
       font-size: large;
       text-align: center;
-      padding: 15px;
+      
     }
     
     label span {
