@@ -16,7 +16,7 @@ button.add-draft-btn, button.add-publish-btn {
 .add-title {
     font-size: 12px;
 }
-.dragdrop-img {
+.dragdrop-img-icon {
     width: 20px;
 }
 .dragdrop-text1 {
@@ -130,7 +130,7 @@ button.btn-drop {
     .add-title {
         font-size: 14px;
     }
-    .dragdrop-img {
+    .dragdrop-img-icon {
         width: 20px;
     }
     .dragdrop-text3 {
@@ -157,7 +157,7 @@ button.btn-drop {
     .add-title {
         font-size: 20px;
     }
-    .dragdrop-img {
+    .dragdrop-img-icon {
         width: auto;
         margin-bottom: 1rem;
     }
