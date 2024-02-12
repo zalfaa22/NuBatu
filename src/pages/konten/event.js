@@ -105,7 +105,7 @@ export default function Event() {
               <div className="d-flex align-items-center me-2">
                   <div
                     className={`switch-button ${switchState2 ? "off" : "on"}`}
-                    onClick={toggleSwitch1}>
+                    onClick={toggleSwitch2}>
                     <div className={`slider ${switchState2 ? "off" : "on"}`} />
                   </div>
                 </div>
@@ -138,7 +138,7 @@ export default function Event() {
               <div className="d-flex align-items-center me-2">
                   <div
                     className={`switch-button ${switchState3 ? "off" : "on"}`}
-                    onClick={toggleSwitch1}>
+                    onClick={toggleSwitch3}>
                     <div className={`slider ${switchState3 ? "off" : "on"}`} />
                   </div>
                 </div>
