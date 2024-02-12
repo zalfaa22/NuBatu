@@ -189,8 +189,8 @@ export default function AddCampaign() {
             </form>
 
             {showPopup && (
-                <div className="popup-overlay">
-                    <div className="popup">
+                <div className="popup-overlay-campaign">
+                    <div className="popup-campaign">
                         {/* Menampilkan nilai dari form yang diisi */}
                         <h1>Verifikasi Program</h1>
                         <div className="detail-popup">

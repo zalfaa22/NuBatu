@@ -33,14 +33,24 @@
 
 
 /* popup */
-.popup-overlay{
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
     align-items: center;
-    /* height: auto; */
-}
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    z-index: 9999; /* Ensure the popup overlay is on top of other content */
+  }
 .popup{
     width: 500px;
     height: auto;
     padding: 30px;
+    background-color: white;
+    border-radius: 10px;
     /* overflow: auto;
     max-height: 90%; */
 }
@@ -94,6 +104,7 @@
 .akhir{
     border: 1px solid #BFBFBF;
     background-color: transparent;
+    margin-top: 20px;
 }
 
 
