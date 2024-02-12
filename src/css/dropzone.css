@@ -1,12 +1,13 @@
 .image-previews img {
     max-width: 410px;
     height: auto;
+    margin-top: -15px;
   }
   
   /* Add media query for screens with a width of 768px or smaller */
   @media (max-width: 768px) {
     .image-previews img {
-      max-width: 100px;
+      width: 200px;
       height: auto;
     }
   }
@@ -14,7 +15,7 @@
   /* Add media query for screens with a width of 320px or smaller */
   @media (max-width: 320px) {
     .image-previews img {
-      width: 150px;
+      width: 165px;
       height: auto;
     }
   }

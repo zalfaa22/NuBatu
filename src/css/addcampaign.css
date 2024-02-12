@@ -72,7 +72,7 @@
     align-items: start;
     justify-content: space-between;
     gap: 50px;
-    height: auto;
+    height: 500px;
     position: relative;
 }
 .judul{
@@ -116,11 +116,8 @@
     justify-content: space-between;
     height: auto;
 }
-.gambar h1{
-    font-size: 16px;
-    color: black;
-    font-weight: bold;
-    width: "auto";
+.gambar .dd{
+    margin-top: -15px;
 }
 .gambar h2{
     font-size: 16px;
@@ -140,6 +137,114 @@
     color: black;
 }
 
+
+/* POP UP */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1100;
+  }
+  
+  .popup {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* optional: add shadow */padding: 40px;
+    width: 900px;
+    height: auto;
+  }
+  
+  .popup button {
+    margin-top: 10px;
+  }
+  .popup h1{
+    font-size: 32px;
+    color: black;
+    font-weight: bold;
+  }
+  .popup .title{
+    font-size: 16px;
+    color: black;
+    font-weight: bold;
+    margin-top: -5px;
+  }
+  .popup .formData{
+    color: #808080;
+    font-weight: normal;
+  }
+  .detail-popup{
+    display: flex;
+    gap: 45px;
+    margin-top: 20px;
+  }
+  .gambar-popup{
+    width: 260px;
+    height: auto;
+  }
+  .popup-kanan{
+    /* width: 500px; */
+  }
+  .popup-dana{
+    display: flex;
+    justify-content: space-between;
+  }
+  .dua-dana{
+    display: flex;
+    justify-content: space-between;
+  }
+  .konten-title{
+    display: flex;
+    gap: 2px;
+    align-items: center;
+    margin-top: 10px;
+  }
+  .form-check-label{
+    font-weight: normal;
+    font-size: 14px;
+  }
+  .pemberitahuan{
+    font-size: 14px;
+    color: #808080;
+  }
+  .pemberitahuan span{
+    font-weight: bold;
+    color: black;
+  }
+  .button-dua{
+    display: flex;
+    justify-content: space-between;
+  }
+  .kembali-campaign{
+    font-size: 14px;
+    font-weight: 600;
+    align-items: center;
+    width: 98px;
+    height: 47px;
+    border: 1px solid #BFBFBF;
+    background-color: transparent;
+    border-radius: 10px;
+    justify-content: center;
+    gap: 2px;
+  }
+  .setuju{
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    align-items: center;
+    width: 109px;
+    height: 47px;
+    background-color: #078D41;
+    border-radius: 10px;
+    justify-content: center;
+    border: none;
+  }
 }
 
 
@@ -163,6 +268,7 @@
     .bungkus-donatur{
         padding: 30px;
         background-color: #EDF6F0;
+        height: 100%;
     }
     .donatur{
         display: flex;
@@ -236,6 +342,7 @@
         display: flex;
         align-items: start;
         justify-content: space-between;
+        height: 400px;
     }
     .judul{
         font-size: 18px;
@@ -252,7 +359,7 @@
     
     .form{
         height: auto;
-        width: 50%;
+        width: 80%;
     }
     .form-label{
         font-size: 13px;
@@ -274,7 +381,7 @@
         justify-content: start;
         gap: 20px;
         height: 420px;
-        padding-left: 30px;
+        padding-left: 10px;
     }
     .inisiator{
         display: flex;
@@ -305,7 +412,116 @@
         font-size: 12px;
         color: black;
     }
-    
+
+
+    /* POP UP */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1100;
+  }
+  
+  .popup {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* optional: add shadow */padding: 40px;
+    width: 700px;
+    height: auto;
+    padding: 30px;
+  }
+  
+  .popup button {
+    margin-top: 10px;
+  }
+  .popup h1{
+    font-size: 25px;
+    color: black;
+    font-weight: bold;
+  }
+  .popup .title{
+    font-size: 15px;
+    color: black;
+    font-weight: bold;
+    margin-top: -5px;
+  }
+  .popup .formData{
+    color: #808080;
+    font-weight: normal;
+    font-size: 14px;
+  }
+  .detail-popup{
+    display: flex;
+    gap: 45px;
+    margin-top: 20px;
+  }
+  .gambar-popup{
+    width: 260px;
+    height: auto;
+  }
+  .popup-kanan{
+    /* width: 500px; */
+  }
+  .popup-dana{
+    display: flex;
+    justify-content: space-between;
+  }
+  .dua-dana{
+    display: flex;
+    justify-content: space-between;
+  }
+  .konten-title{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 10px;
+  }
+  .form-check-label{
+    font-weight: normal;
+    font-size: 14px;
+  }
+  .pemberitahuan{
+    font-size: 13px;
+    color: #808080;
+  }
+  .pemberitahuan span{
+    font-weight: bold;
+    color: black;
+  }
+  .button-dua{
+    display: flex;
+    justify-content: space-between;
+  }
+  .kembali-campaign{
+    font-size: 12px;
+    font-weight: 600;
+    align-items: center;
+    width: 90px;
+    height: 40px;
+    border: 1px solid #BFBFBF;
+    background-color: transparent;
+    border-radius: 10px;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .setuju{
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+    align-items: center;
+    width: 95px;
+    height: 40px;
+    background-color: #078D41;
+    border-radius: 10px;
+    justify-content: center;
+    border: none;
+  }
     }
 
 
@@ -325,6 +541,7 @@
         .bungkus-donatur{
             padding: 20px;
             background-color: #EDF6F0;
+            
         }
         .donatur{
             display: block;
@@ -353,29 +570,29 @@
                 padding-top: 10px;
         }
         .simpan{
-            width: 120px;
+            width: 110px;
             height: 40px;
             border: 1.5px solid #BFBFBF;
             border-radius: 10px;
-            font-size: 12px;
+            font-size: 10px;
             background-color: transparent;
         }
         .verif{
-            width: 120px;
+            width: 110px;
             height: 40px;
             border: 2px solid #BFBFBF;
             border-radius: 10px;
-            font-size: 12px;
+            font-size: 10px;
             background-color: rgba(7, 141, 65, 0.8);
             border: none;
             color: white;
         }
         .info{
-            width: 120px;
+            width: 100px;
             height: 40px;
             border-radius: 10px;
-            border: 2px solid #009B4C;
-            font-size: 12px;
+            border: 1px solid #009B4C;
+            font-size: 10px;
         }
         .umum{
             display: flex;
@@ -383,12 +600,13 @@
             justify-content: start;
             gap: 40px;
             width: 100%;
-            margin-top: 30px;
+            margin-top: 20px;
         }
         .umum p{
             color: #404040;
-            font-size: 12px;
+            font-size: 10px;
             text-decoration: none;
+            height: 12px;
         }
         
         .putih{
@@ -399,6 +617,7 @@
             display: block;
             align-items: start;
             justify-content: start;
+            height: 700px;
         }
         .judul{
             font-size: 18px;
@@ -434,7 +653,7 @@
         
         .gambar{
             display: flex;  
-            height: 420px;
+            /* height: 100%; */
             padding-top: 10px;
             margin: auto;
             width: 100%;
@@ -470,6 +689,129 @@
             font-size: 12px;
             color: black;
         }
+
+
+
+
+         /* POP UP */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1100;
+    max-height: 100%;
+    overflow-y: auto;
+  }
+  
+  .popup {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* optional: add shadow */padding: 40px;
+    width: 250px;
+    height: 100%;
+    padding: 30px;
+    overflow: scroll;
+  }
+  
+  .popup button {
+    margin-top: 10px;
+  }
+  .popup h1{
+    font-size: 21px;
+    color: black;
+    font-weight: bold;
+  }
+  .popup .title{
+    font-size: 15px;
+    color: black;
+    font-weight: bold;
+    margin-top: -5px;
+  }
+  .popup .formData{
+    color: #808080;
+    font-weight: normal;
+    font-size: 14px;
+    max-width: 200px;
+  }
+  .detail-popup{
+    display: block;
+    gap: 45px;
+    margin-top: 20px;
+  }
+  .gambar-popup{
+    width: 100%;
+    height: auto;
+  }
+  .popup-kanan{
+    /* width: 500px; */
+    margin-top: 20px;
+    margin-left: 0;
+  }
+  .popup-kanan ul{
+    padding-left: 0px;
+  }
+  .popup-dana{
+    display: flex;
+    justify-content: space-between;
+  }
+  .dua-dana{
+    display: block;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 40px;
+  }
+  .konten-title{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 10px;
+  }
+  .form-check-label{
+    font-weight: normal;
+    font-size: 14px;
+  }
+  .pemberitahuan{
+    font-size: 13px;
+    color: #808080;
+  }
+  .pemberitahuan span{
+    font-weight: bold;
+    color: black;
+  }
+  .button-dua{
+    display: flex;
+    justify-content: space-between;
+  }
+  .kembali-campaign{
+    font-size: 12px;
+    font-weight: 600;
+    align-items: center;
+    width: 90px;
+    height: 40px;
+    border: 1px solid #BFBFBF;
+    background-color: transparent;
+    border-radius: 10px;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .setuju{
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+    align-items: center;
+    width: 95px;
+    height: 40px;
+    background-color: #078D41;
+    border-radius: 10px;
+    justify-content: center;
+    border: none;
+  }
         
         }
 

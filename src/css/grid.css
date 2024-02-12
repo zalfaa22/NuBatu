@@ -1,8 +1,8 @@
-/* section {
+section {
     padding: 2rem 0;
   }
   
-  label {
+  label.cover-label {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -15,6 +15,7 @@
     cursor: pointer;
     font-size: large;
     text-align: center;
+    padding: 50px;
   }
   
   label span {
@@ -24,7 +25,7 @@
     text-align: center;
   }
   
-  input {
+  .input-grid {
     display: none;
   }
   
@@ -79,7 +80,7 @@
     background-color: green;
   }
   
-  label:hover,
+  label.cover-label :hover,
   .upload-btn:hover {
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
       rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
@@ -96,11 +97,14 @@
 
 
   @media (max-width: 320px) {
+    .bungkus-grid{
+      width: 80%;
+    }
     .image img {
-      width: 205px;
+      width: 170px;
       height: auto;
     }
-    label {
+    label.cover-label  {
       margin: 0 auto;
       display: flex;
       flex-direction: column;
@@ -108,8 +112,7 @@
       align-items: center;
       border: 1px dotted black;
       border-radius: 20px;
-      width: 10rem;
-      height: 10rem;
+      width: 100px;
       cursor: pointer;
       font-size: large;
       text-align: center;
@@ -121,7 +124,15 @@
       font-size: auto;
       padding-top: 0.5rem;
       text-align: center;
+      width: 150px;
     }
+
+    .judul-drag {
+      margin-right: 5px;
+      font-weight: bold;
+      text-align: center;
+    }
+    
 
     .upload-btn {
       cursor: pointer;
@@ -136,5 +147,4 @@
       font-size: 10px;
     }
 
-
-  } */
+  }

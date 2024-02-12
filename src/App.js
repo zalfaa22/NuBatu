@@ -15,6 +15,7 @@ import EditBerita from "./pages/konten/editBerita";
 import Artikel from "./pages/konten/artikel";
 import Event from "./pages/konten/event";
 import Pengaturan from "./pages/pengaturan";
+import Defaulthideshow from "./pages/coba";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
           <Route path="/artikel" element={<Artikel/>} />
           <Route path="/event" element={<Event/>} />
           <Route path="/pengaturan" element={<Pengaturan/>} />
+          <Route path="/coba" element={<Defaulthideshow/>} />
         </Routes>
       </div>
     </>

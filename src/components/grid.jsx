@@ -24,11 +24,11 @@ const Gridfoto = () => {
   }
 
   return (
-    <section>
-      <label style={{ fontSize: "14px", width: "100%", height: "260px", display: "flex", alignItems: "center", border: "2px dashed #808080" }}>
+    <section className="bungkus-grid">
+      <label className="cover-label" style={{ fontSize: "14px", width: "100%", height: "260px", display: "flex", alignItems: "center", border: "2px dashed #808080" }}>
         <img src="../../assets/gallery.svg"></img>
         <h1 className='lg-d-flex'>
-          <span style={{ marginRight: "5px", fontWeight: "bold", textAlign: "center" }}>Drag & drop image to upload, or</span>
+          <span className="judul-drag" style={{ marginRight: "5px", fontWeight: "bold", textAlign: "center" }}>Drag & drop image to upload, or</span>
           <span style={{ fontSize: "14px", color: "#0047FF", fontWeight: "bold" }}>browse</span>
         </h1>
         <span style={{ fontSize: "12px", color: "#808080", fontWeight: "600", marginTop: "-10px" }}>1208x840px size required in PNG or JPG format only, maximum 5MB.</span>
@@ -38,11 +38,12 @@ const Gridfoto = () => {
           onChange={onSelectFile}
           multiple
           accept="image/png , image/jpeg, image/webp"
+          className="input-grid"
         />
       </label>
       <br />
 
-      <input type="file" multiple />
+      <input className="input-grid" type="file" multiple />
 
       {selectedImages.length > 0 &&
         (selectedImages.length > 5 ? (

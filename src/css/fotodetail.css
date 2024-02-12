@@ -257,26 +257,26 @@
         padding-top: 10px;
     }
     .save{
-        width: 120px;
-        height: 40px;
+        width: 100px;
+        height: 35px;
         border: 1.5px solid #BFBFBF;
         border-radius: 10px;
-        font-size: 12px;
+        font-size: 10px;
         background-color: transparent;
     }
     .verifikasi{
-        width: 120px;
-        height: 40px;
+        width: 100px;
+        height: 35px;
         border: 2px solid #BFBFBF;
         border-radius: 10px;
-        font-size: 12px;
+        font-size: 10px;
         background-color: rgba(7, 141, 65, 0.8);
         border: none;
         color: white;
     }
     .info-umum{
         border: none;
-        font-size: 12px;
+        font-size: 10px;
         color: #404040; 
         text-decoration: none;
     }
@@ -284,16 +284,16 @@
         display: flex;
         align-items: end;
         justify-content: space-between;
-        width: 265px;
+        width: 100%;
         margin-top: 30px;
     }
     .foto-detail{
         color: #404040;
-        font-size: 12px;
+        font-size: 10px;
         /* text-decoration: none; */
         border: 1px solid #009B4C;
-        width: 104px;
-        height: 40px;
+        width: 100px;
+        height: 35px;
         border-radius: 10px; 
         text-align: center;
         justify-content: center;
@@ -303,18 +303,19 @@
     
     .konten-putih{
         background-color: white;
-        padding: 30px;
+        padding: 20px;
         margin-top: 30px;
         border-radius: 10px;
         width: 100%;
     }
     .jud{
-        display: flex;
+        display: block;
         justify-content: space-between;
         padding-bottom: 20px;
     }
     .judul-gambar-detail h1{
-        font-size: 18px;
+        font-size: 15px;
+        width: 200px;
     }
     .judul-gambar-detail h2{
         display: flex;
@@ -322,6 +323,7 @@
         justify-content: start;
         gap: 5px;
         height: auto;
+        width: 100%;
     }
     .require{
         font-size: 10px;

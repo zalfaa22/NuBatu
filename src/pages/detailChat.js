@@ -12,11 +12,11 @@ export default function DetailChat() {
 
         {/* putih */}
         <div className="bungkus-ziyad">
-          <div className="oren d-flex grid gap-4 align-start">
-            <img src="../../assets/oren.svg"></img>
+          <div className="oren">
+            <img className="za" src="../../assets/oren.svg"></img>
             <div>
-              <h1 style={{ fontSize: "22px" }}>Ziyad Ahmad Baharuddin</h1>
-              <h2 style={{ fontSize: "18px", color: "#404040" }}>
+              <h1 className="nama-chat">Ziyad Ahmad Baharuddin</h1>
+              <h2 className="pertanyaan">
                 Izin bertanya pak kiai, katanya boleh tidak seorang Muslim
                 menghadiahkan fatihah kepada orang yang non Muslim, atau
                 bertawasul untuk non Muslim tersebut? Kalau boleh, kira² apa
@@ -24,14 +24,14 @@ export default function DetailChat() {
                 atau Rasulullah sendiri melakukannya? Jika tidak, mengapa bisa
                 demikian?
               </h2>
-              <h3 style={{ fontSize: "16px", color: "#808080" }}>
+              <h3 className="tgl-tanya">
                 Sep 26, 2023
               </h3>
             </div>
           </div>
 
           {/* form */}
-          <div class="pt-5">
+          <div class="pt-lg-5 pt-md-4 pt-3">
             <label for="exampleFormControlInput1" class="form-label">
               Dijawab oleh
             </label>
@@ -40,6 +40,7 @@ export default function DetailChat() {
               class="form-control"
               id="exampleFormControlInput1"
               placeholder="Nama Kyai/Ust/Habib"
+              // style={{fontSize: "10px"}}
             />
           </div>
           <div className="jawaban" style={{ position: "relative" }}>
@@ -53,21 +54,9 @@ export default function DetailChat() {
                 id="exampleFormControlTextarea1"
                 rows="3"
                 placeholder="Jawaban"
-                style={{ paddingRight: "100px" }}
+                style={{ paddingRight: "95px" }}
               ></textarea>
-              <button
-                style={{
-                  position: "absolute",
-                  top: 35,
-                  right: 10,
-                  backgroundColor: "#009B4C",
-                  width: "80px",
-                  height: "40px",
-                  borderRadius: "5px",
-                  border: "none",
-                  fontSize: "12px",
-                  color: "white",
-                }}
+              <button className="reply"
               >
                 Reply
               </button>
