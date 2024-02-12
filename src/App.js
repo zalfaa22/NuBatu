@@ -11,36 +11,38 @@ import NderekTanglet from "./pages/nderekTanglet";
 import DetailChat from "./pages/detailChat";
 import Berita from "./pages/konten/berita";
 import AddBerita from "./pages/konten/addBerita";
+import EditBerita from "./pages/konten/editBerita";
 import Artikel from "./pages/konten/artikel";
 import Event from "./pages/konten/event";
 import Pengaturan from "./pages/pengaturan";
-import "bootstrap-icons/font/bootstrap-icons.css";
 import Defaulthideshow from "./pages/coba";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 function App() {
   return (
     <>
       <div>
         <Routes>
-          <Route path="/" Component={Login} />
+          <Route path="/" element={<Login/>} />
         </Routes>
       </div>
       <div className="App">
         <Sidebar />
         <Routes>
-          <Route path="/beranda" Component={Beranda} />
-          <Route path="/campaign" Component={Campaign} />
-          <Route path="/addCampaign" Component={AddCampaign} />
-          <Route path="/fotoDetail" Component={FotoDetail} />
-          <Route path="/donatur" Component={Donatur} />
-          <Route path="/nderekTanglet" Component={NderekTanglet} />
-          <Route path="/detailChat" Component={DetailChat} />
-          <Route path="/berita" Component={Berita} />
-          <Route path="/addBerita" Component={AddBerita} />
-          <Route path="/artikel" Component={Artikel} />
-          <Route path="/event" Component={Event} />
-          <Route path="/pengaturan" Component={Pengaturan} />
-          <Route path="/coba" Component={Defaulthideshow} />
+          <Route path="/beranda" element={<Beranda/>} />
+          <Route path="/campaign" element={<Campaign/>} />
+          <Route path="/addCampaign" element={<AddCampaign/>} />
+          <Route path="/fotoDetail" element={<FotoDetail/>} />
+          <Route path="/donatur" element={<Donatur/>} />
+          <Route path="/nderekTanglet" element={<NderekTanglet/>} />
+          <Route path="/detailChat" element={<DetailChat/>} />
+          <Route path="/berita" element={<Berita/>} />
+          <Route path="/addBerita" element={<AddBerita/>} />
+          <Route path="/editBerita" element={<EditBerita/>} />
+          <Route path="/artikel" element={<Artikel/>} />
+          <Route path="/event" element={<Event/>} />
+          <Route path="/pengaturan" element={<Pengaturan/>} />
+          <Route path="/coba" element={<Defaulthideshow/>} />
         </Routes>
       </div>
     </>
