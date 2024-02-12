@@ -87,12 +87,13 @@
         display: flex;
         align-items: start;
         justify-content: end;
-        gap: 260px;
+        gap: 200px;
         padding-bottom: 20px;
         width: 100%;
     }
     .judul-gambar-detail h1{
         font-size: 20px;
+        width: 100%;
     }
     .judul-gambar-detail h2{
         display: flex;
