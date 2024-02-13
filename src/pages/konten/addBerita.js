@@ -7,6 +7,8 @@ import "../../css/addberita.css";
 
 export default function AddBerita() {
   const [startDate, setStartDate] = useState(null);
+  const [isImageDisplayed, setIsImageDisplayed] = useState(false);
+  const fileInputRef = useRef(null);
   //   const DragDropFiles = () => {
 
   //   }
@@ -19,6 +21,15 @@ export default function AddBerita() {
   const handleDrop = (event) => {
     event.preventDefault();
     setFiles(event.dataTransfer.files);
+  };
+
+  const handleDeleteImage = () => {
+    setFiles(null); // Menghapus file
+    setIsImageDisplayed(false); // Menandai bahwa gambar tidak ditampilkan
+  };
+
+  const handleReplaceImage = () => {
+    fileInputRef.current.click(); // Panggil fungsi click pada input file saat tombol "Ganti Foto" diklik
   };
 
   //   if (files)
@@ -124,8 +135,8 @@ export default function AddBerita() {
                         className="img-fluid"
                       />
                       <div className="image-actions">
-                        <button className="btn-hapus-imgbrt">Hapus</button>
-                        <button className="btn-ganti-imgbrt" onClick={() => inputRef.current.click()}>
+                        <button className="btn-hapus-imgbrt" onClick={handleDeleteImage}>Hapus</button>
+                        <button className="btn-ganti-imgbrt" onClick={handleReplaceImage}>
                           Ganti Foto <img src="../assets/berita/trash-white-icon.svg"/>
                         </button>
                       </div>
@@ -180,6 +191,14 @@ export default function AddBerita() {
             </div>
           </div>
         </div>
+        {/* Hidden input file untuk menggantikan gambar */}
+      <input
+        type="file"
+        multiple
+        onChange={(event) => setFiles(event.target.files)}
+        hidden
+        ref={fileInputRef}
+      />
       </div>
   );
 }
