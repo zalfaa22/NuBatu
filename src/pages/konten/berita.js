@@ -1,9 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom"; 
 import Button from "react-bootstrap/Button";
 import Dropdown from "react-bootstrap/Dropdown";
 import "../../css/berita.css";
+import BeritaItem from "./beritaItem";
+import { getListOfBerita } from "../../services/localstorage_Berita";
 
 export default function Berita() {
+  const navigate = useNavigate();
+  const [beritaa, setBerita] = useState([]);
+  useEffect (() => {
+    setBerita(getListOfBerita());
+  },[])
+
   const [statusBerita, setStatusBerita] = useState('semua');
   const [searchQuery, setSearchQuery] = useState('');
   const [searchMode, setSearchMode] = useState(false);
@@ -49,21 +58,21 @@ export default function Berita() {
   });
 
   return (
-    <div className="content vh-100" style={{ backgroundColor: "#EDF6F0" }}>
+    <div className="content " style={{ backgroundColor: "#EDF6F0" }}>
       <div className="px-3 px-md-5 py-4">
         <div className="mb-4 mb-lg-5">
           <div className="d-flex justify-content-between">
             <h2 className="fw-bold page-title">Berita</h2>
             <div className="d-flex">
-              <a href="/addberita">
-                <Button variant="success" className="add-berita-btn">Tambah Berita
+              {/* <a href="/addberita"> */}
+                <Button variant="success" className="add-berita-btn" onClick={() => navigate("/addberita")}>Tambah Berita
                   <img
                       src="../../assets/berita/plus.svg"
                       alt="add"
                       className="ms-1 ms-md-2 add-icon"
                     />
                 </Button>{' '}
-              </a>
+              {/* </a> */}
               <img
                 src="../assets/berita/profile.svg"
                 className="profile-acc"
@@ -199,6 +208,8 @@ export default function Berita() {
                     </td>
                   </tr>
                 ))}
+                {beritaa.map(berita => <BeritaItem berita={berita} key={berita.id} setBerita={setBerita}/>)}
+                {/* <BeritaItem/> */}
                 <tr>
                     <th colspan="3" className="text-1 fw-normal ps-3 pt-3">
                       Page 1 of 1
