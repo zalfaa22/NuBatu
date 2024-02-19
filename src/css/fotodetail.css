@@ -81,18 +81,19 @@
         justify-content: space-between;
         width: 100%;
         position: relative;
-        height: auto;
+        height: fit-content;
     }
     .jud{
         display: flex;
         align-items: start;
         justify-content: end;
-        gap: 260px;
+        gap: 200px;
         padding-bottom: 20px;
         width: 100%;
     }
     .judul-gambar-detail h1{
         font-size: 20px;
+        width: 100%;
     }
     .judul-gambar-detail h2{
         display: flex;
@@ -193,7 +194,7 @@
     
     .konten-putih{
         background-color: white;
-        padding: 30px;
+        padding: 20px;
         margin-top: 30px;
         border-radius: 10px;
         width: 100%;
@@ -203,17 +204,18 @@
         justify-content: space-between;
         padding-bottom: 20px;
         gap: 0px;
-        /* width: 100%; */
     }
-    .judul-gambar-detail h1{
+    /* .judul-gambar-detail h1{
         font-size: 18px;
-    }
+        width: 100%;
+    } */
     .judul-gambar-detail h2{
         display: flex;
-        align-items: start;
+        align-items:    ;
         justify-content: start;
         gap: 5px;
         height: auto;
+        margin-top: 8px;
     }
     .require{
         font-size: 10px;
@@ -313,10 +315,11 @@
         display: block;
         justify-content: space-between;
         padding-bottom: 20px;
+        width: 100%;
     }
     .judul-gambar-detail h1{
         font-size: 15px;
-        width: 200px;
+        width: 100%;
     }
     .judul-gambar-detail h2{
         display: flex;

@@ -51,14 +51,14 @@
     .campaign{
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: start;
+        gap: 20px;
         width: 495px;
     }
     .satu{
         font-size: 14px;
-        font-weight: semibold;
         color: black;
-        width: 162px;
+        width: auto;
         height: 44px;
         border: 1px solid #009B4C;
         border-radius: 10px;
@@ -292,6 +292,15 @@
         background-color: white;
         border-radius: 8px;
     }
+    .dropdown-campaign {
+        display: none;
+        margin-right: 4px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        padding: 5px;
+        margin: 0px;
+        font-size: 15px !important;
+}
 }
 
 
@@ -351,14 +360,16 @@
         margin-top: 30px;
     }
     .campaign{
-        display: flex;
+        display: none;
         align-items: center;
         justify-content: space-between;
         width: 320px;
     }
+    .dropdown-campaign{
+        display: inline;
+    }
     .satu{
         font-size: 12px;
-        font-weight: semibold;
         color: black;
         width: 130px;
         height: 35px;
@@ -657,19 +668,18 @@
 
     .option{
         display: flex;
-        align-items: start;
-        justify-content: start;
+        align-items: center;
+        justify-content: space-between;
         margin-top: 20px;
     }
     .campaign{
-        display: block;
+        display: none;
         align-items: center;
         justify-content: start;
         height: auto;
     }
     .satu{
         font-size: 10px;
-        font-weight: semibold;
         color: black;
         width: 130px;
         height: 35px;
@@ -909,4 +919,12 @@
     .cover-table{
         margin-top: -20px;
     }
+    .dropdown-campaign {
+        margin-right: 4px;
+        margin-top: 50px;
+        margin-bottom: 5px;
+        padding: 5px;
+        margin: 0px;
+        font-size: 10px !important;
+}
 }

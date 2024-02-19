@@ -36,10 +36,10 @@
 .verif{
     width: 174px;
     height: 49px;
-    border: 2px solid #BFBFBF;
+    border: 2px solid #078D41;
     border-radius: 10px;
     font-size: 16px;
-    background-color: rgba(7, 141, 65, 0.8);
+    background-color: #078D41;
     border: none;
     color: white;
 }
@@ -71,8 +71,8 @@
     display: flex;
     align-items: start;
     justify-content: space-between;
-    gap: 50px;
-    height: 500px;
+    gap: 40px;
+    height: fit-content;
     position: relative;
 }
 .judul{
@@ -83,7 +83,34 @@
     margin-top: -10px;
     font-size: 14px;
 }
+.nam-prog .form-label{
+  font-size: 14px;
+}
+.nam-prog input::placeholder {
+    font-size: 16px;
+    margin-top: 5px;
+}
+.nam-prog input{
+  font-size: 16px;
+}
+.form-control-textarea {
+  font-size: 16px;
+  margin-top: 5px;
+}
 
+.nam-prog .form-label{
+      font-size: 14px;
+    }
+    .nam-prog input::placeholder {
+        font-size: 16px;
+        margin-top: 5px;
+    }
+    .nam-prog input{
+      font-size: 16px;
+    }
+    textarea.form-control {
+      font-size: 16px !important; 
+    }
 
 .form{
     height: auto;
@@ -108,7 +135,7 @@
     flex-direction: column;
     justify-content: start;
     gap: 20px;
-    height: 420px;
+    height: 100%;
 }
 .inisiator{
     display: flex;
@@ -342,8 +369,9 @@
         border-radius: 10px;
         display: flex;
         align-items: start;
-        justify-content: space-between;
-        height: 480px;
+        justify-content: end;
+        gap: 30px;  
+        height: fit-content;
     }
     .judul{
         font-size: 18px;
@@ -351,10 +379,25 @@
     }
     .nam-prog{
         margin-top: -10px;
-        /* display: flex;
-        flex-direction: column;
-        justify-content: start;
-        gap: 5px; */
+    }
+    .nam-prog .form-label{
+      font-size: 12px;
+    }
+    .nam-prog input::placeholder {
+        font-size: 12px;
+        margin-top: 5px;
+    }
+    .nam-prog input{
+      font-size: 12px;
+    }
+    textarea.form-control {
+      font-size: 12px !important; 
+    }
+
+  
+  
+    .form-control-textarea::placeholder {
+      color: red; /* Warna placeholder */
     }
     
     
@@ -381,8 +424,9 @@
         flex-direction: column;
         justify-content: start;
         gap: 20px;
-        height: 420px;
+        height: 100%;
         padding-left: 10px;
+        width: 170px;
     }
     .inisiator{
         display: flex;
@@ -613,13 +657,13 @@
         
         .putih{
             background-color: white;
-            padding: 30px;
+            padding: 20px;
             margin-top: 30px;
             border-radius: 10px;
             display: block;
             align-items: start;
             justify-content: start;
-            height: auto;
+            height: fit-content;
         }
         .judul{
             font-size: 18px;
@@ -647,15 +691,17 @@
             border-right: none; /* Remove left border */
             background-color: white;
         }
-        
-        
-        
+        .form-control::placeholder {
+          margin-left: 0;
+          text-align: left !important; /* Menjadikan margin kiri menjadi 0 */
+          /* Properti gaya lainnya sesuai kebutuhan */
+      }
         
         
         
         .gambar{
             display: flex;  
-            /* height: 100%; */
+            height: 100%;
             padding-top: 10px;
             margin: auto;
             width: 100%;

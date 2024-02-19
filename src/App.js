@@ -4,7 +4,9 @@ import Sidebar from "./components/sidebar";
 import Login from "./pages/login";
 import Beranda from "./pages/beranda";
 import Campaign from "./pages/campaign";
+import Modal from "./pages/modal";
 import AddCampaign from "./pages/addCampaign";
+import EditCampaign from "./pages/editCampaign";
 import FotoDetail from "./pages/fotoDetail";
 import Donatur from "./pages/donatur";
 import NderekTanglet from "./pages/nderekTanglet";
@@ -18,38 +20,49 @@ import Event from "./pages/konten/event";
 import Pengaturan from "./pages/pengaturan";
 import Defaulthideshow from "./pages/coba";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import { getListOfEmployees } from "./services/localstorage";
 
 function App() {
   return (
     <>
       <div>
         <Routes>
-          <Route path="/" element={<Login/>} />
+          <Route path="/" element={<Login />} />
         </Routes>
       </div>
       <div className="App">
         <Sidebar />
         <Routes>
-          <Route path="/beranda" element={<Beranda/>} />
-          <Route path="/campaign" element={<Campaign/>} />
-          <Route path="/addCampaign" element={<AddCampaign/>} />
-          <Route path="/fotoDetail" element={<FotoDetail/>} />
-          <Route path="/donatur" element={<Donatur/>} />
-          <Route path="/nderekTanglet" element={<NderekTanglet/>} />
-          <Route path="/detailChat" element={<DetailChat/>} />
-          <Route path="/berita" element={<Berita/>} />
-          <Route path="/addBerita" element={<AddBerita/>} />
+          <Route path="/beranda" element={<Beranda />} />
+          <Route path="/campaign" element={<CampaignPage />} />
+          <Route path="/modal" element={<Modal />} />
+          <Route path="/addCampaign" element={<AddCampaign />} />
+          <Route path='/create-employee' element={<AddCampaign />}/>
+          <Route path="/editCampaign" element={<EditCampaign />} />
+          <Route path="/fotoDetail" element={<FotoDetail />} />
+          <Route path="/donatur" element={<Donatur />} />
+          <Route path="/nderekTanglet" element={<NderekTanglet />} />
+          <Route path="/detailChat" element={<DetailChat />} />
+          <Route path="/berita" element={<Berita />} />
+          <Route path="/addBerita" element={<AddBerita />} />
           <Route path="/editBerita/:id" element={<AddBerita/>} />
           <Route path="/beritaItem" element={<BeritaItem/>} />
-          <Route path="/editBerita" element={<EditBerita/>} />
-          <Route path="/artikel" element={<Artikel/>} />
-          <Route path="/event" element={<Event/>} />
-          <Route path="/pengaturan" element={<Pengaturan/>} />
-          <Route path="/coba" element={<Defaulthideshow/>} />
+          <Route path="/editBerita" element={<EditBerita />} />
+          <Route path="/artikel" element={<Artikel />} />
+          <Route path="/event" element={<Event />} />
+          <Route path="/pengaturan" element={<Pengaturan />} />
+          <Route path="/coba" element={<Defaulthideshow />} />
         </Routes>
       </div>
     </>
   );
 }
 
+// Define a separate component for Campaign to pass props
+function CampaignPage() {
+  const employees = getListOfEmployees();
+  return <Campaign employees={employees} />;
+}
+
 export default App;
+

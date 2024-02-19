@@ -1,63 +1,129 @@
-import React, { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useNavigate, useParams, useLocation } from 'react-router-dom';
 import { useForm } from '../hooks/useForm';
 import { addEmployee, getEmployeeById, editEmployee } from '../services/localstorage';
 import { getListOfEmployees } from '../services/localstorage';
 import "../css/addcampaign.css";
 import DragDropFiles from "../components/dropzone";
-import Modal from "./modal";
 
-export default function AddCampaign() {
-    const { handleInputChange, inputValues, resetForm, setForm } = useForm({ 
+export default function EditCampaign() {
+    // state untuk menampilkan pop-up
+    const [showPopup, setShowPopup] = useState(false);
+
+    const [formData, setFormData] = useState({
         namaProgram: "",
         deskripsi: "",
-        danaDiajukan: ""
+        danaDiajukan: "",
+        gambarSampul: null // Memantau apakah gambar telah dipilih di Dropzone
     });
-    
-    const [showPopup, setShowPopup] = useState(false);
-    const [approvalStatus, setApprovalStatus] = useState(null);
+    const [tempFormData, setTempFormData] = useState(null); // State untuk menyimpan sementara data form yang diperbarui
+    const [approvalStatus, setApprovalStatus] = useState(null); // State untuk menyimpan status persetujuan
 
     const togglePopup = () => {
-        setShowPopup(!showPopup);
+        setShowPopup(prevShowPopup => !prevShowPopup); // Menggunakan prevState untuk memastikan perubahan state yang benar
+        // Reset tempFormData saat pop-up ditutup
+        if (showPopup) {
+            setTempFormData(null);
+        }
     };
 
+
+    // Fungsi untuk memeriksa apakah semua input telah diisi
+    const isFormFilled = () => {
+        return (
+            formData.namaProgram.trim() !== "" &&
+            formData.deskripsi.trim() !== "" &&
+            formData.danaDiajukan.trim() !== "" &&
+            formData.gambarSampul !== null
+        );
+    };
+
+    // const handleInputChange = (e) => {
+    //     const { name, value } = e.target;
+    //     setFormData({
+    //         ...formData,
+    //         [name]: value
+    //     });
+    // };
+
     const handleImageSelect = (imageFile) => {
-        setForm({
-            ...inputValues,
-            gambarSampul: imageFile
+        console.log("Image file selected:", imageFile); // Tambahkan log di sini
+        setFormData({
+            ...formData,
+            gambarSampul: imageFile // Simpan file gambar ke dalam state
         });
     };
 
+
     const handleFormSubmit = (e) => {
         e.preventDefault();
-        // Lakukan penanganan data form di sini (misalnya, kirim ke backend)
-        console.log("Form data:", inputValues);
+        setFormData({
+            ...formData,
+            namaProgram: document.getElementById('exampleInputEmail1').value,
+            deskripsi: document.getElementById('exampleInputPassword1').value,
+            danaDiajukan: document.getElementById('danaDiajukan').value,
+        });
+        handleVerification(); // Memanggil fungsi untuk verifikasi form setelah pembaruan state
+    };
+
+
+    const handleVerification = () => {
+        if (isFormFilled()) {
+            togglePopup();
+            console.log("FormData before popup:", formData); // 
+        } else {
+            alert("Silakan isi semua input dan unggah gambar terlebih dahulu.");
+        }
     };
 
     const handleApprovalStatusChange = (status) => {
+        setTempFormData({ ...formData }); // Memperbarui tempFormData dengan nilai formData yang terbaru
         setApprovalStatus(status);
     };
 
+
     const handlePopupClose = () => {
-        setShowPopup(false);
+        if (tempFormData && isFormFilled(tempFormData)) {
+            setFormData(tempFormData);
+            togglePopup();
+        } else {
+            alert("Silakan isi semua input dan unggah gambar terlebih dahulu.");
+        }
     };
+
 
     const navigate = useNavigate();
 
-    const {id} = useParams();
+    const { id } = useParams();
 
     const [showAlert, setShowAlert] = useState(false);
+
+    const { inputValues, handleInputChange, resetForm, setForm } = useForm({
+        nama: '',
+        deskripsi: '',
+        dana: '',
+        gambar: ''
+    })
 
     useEffect(() => {
         if (id) {
             const employee = getEmployeeById(id);
             if (employee) {
-                setForm(employee);
+                setForm({
+                    nama: employee.namaProgram,
+                    deskripsi: employee.deskripsi,
+                    dana: employee.danaDiajukan,
+                    gambar: employee.gambarSampul
+                });
             } else {
                 console.log(`Employee with id ${id} not found.`);
             }
         }
     }, [id]);
+    
+
+
+
 
     const handleBack = () => {
         navigate('/');
@@ -72,11 +138,27 @@ export default function AddCampaign() {
         id ? editEmployee(id, inputValues) : addEmployee(inputValues);
         setShowAlert(true);
         resetForm();
-        localStorage.setItem('employees', JSON.stringify(getListOfEmployees()));
+        // Tambahkan penyimpanan ke local storage di sini
+        localStorage.setItem('employees', JSON.stringify(getListOfEmployees())); // Menggunakan getListOfEmployees() untuk mendapatkan daftar karyawan
         setTimeout(() => {
             setShowAlert(false);
         }, 2000);
     };
+
+
+    const location = useLocation();
+    const { campaign } = location.state;
+
+    useEffect(() => {
+        if (campaign) {
+          setForm({
+            nama: campaign.nama,
+            deskripsi: campaign.deskripsi,
+            dana: campaign.danaDiajukan,
+            gambar: campaign.gambarSampul
+          });
+        }
+      }, [campaign]);
 
     return (
         <div className="content">
@@ -91,71 +173,74 @@ export default function AddCampaign() {
                                 </h1>
                             </a>
 
-                            <div className="button-atas-kanan">
-                                <button className="simpan">Simpan Pengajuan</button>
-                                <button className="verif" onClick={togglePopup}>Verifikasi Program</button>
+                            <div className="">
+                                {/* <button className="simpan">Simpan Pengajuan</button> */}
+                                <button className="verif" onClick={togglePopup}>Edit Program</button>
+
                             </div>
                         </div>
-                        <div className="umum">
+                        {/* <div className="umum">
                             <button className="info">Informasi Umum</button>
                             <a href="/fotoDetail" style={{ textDecoration: 'none' }}>
                                 <p>Foto Detail</p>
                             </a>
-                        </div>
+
+                        </div> */}
 
                         <div className="putih">
                             <div className="form">
                                 <div className="judul">
                                     Detail Program
                                 </div>
-                                <form className="nam-prog" onSubmit={handleSubmit}>
-                                    <div className="mb-3">
-                                        <label htmlFor="exampleInputEmail1" className="form-label">Nama Program</label>
+                                <form className="nam-prog">
+                                    <div class="mb-3">
+                                        <label for="exampleInputEmail1" class="form-label">Nama Program</label>
                                         <input
                                             type="text"
                                             className="form-control"
                                             id="exampleInputEmail1"
                                             aria-describedby="emailHelp"
                                             placeholder="Nama Program"
-                                            name="namaProgram"
-                                            value={inputValues.namaProgram}
                                             onChange={handleInputChange}
+                                            value={inputValues.nama}
                                         />
                                     </div>
-                                    <div className="mb-3">
-                                        <label htmlFor="deskripsi" className="form-label">
+                                    <div class="mb-3">
+                                        <label for="exampleInputPassword1" class="form-label">
                                             Deskripsi
                                         </label>
                                         <textarea
                                             className="form-control"
-                                            id="deskripsi"
+                                            id="exampleInputPassword1"
+                                            aria-describedby="emailHelp"
                                             placeholder="E.g. Deskripsi Detail"
-                                            name="deskripsi"
-                                            value={inputValues.deskripsi}
                                             onChange={handleInputChange}
-                                        ></textarea>
+                                            value={inputValues.deskripsi}
+                                        />
                                     </div>
 
                                     <hr className="my-2" />
 
-                                    <div className="mb-3">
-                                        <label htmlFor="danaDiajukan" className="form-label">
+                                    <div class="mb-3">
+                                        <label for="exampleInputEmail1" class="form-label">
                                             Dana yang diajukan
                                         </label>
-                                        <div className="input-group">
-                                            <img src="../../assets/rp.svg" alt="Currency Icon" className="input-group-text custom-icon" style={{ borderRight: "none" }} />
+                                        <div class="input-group">
+                                            <img src="../../assets/rp.svg" alt="Currency Icon" class="input-group-text custom-icon" style={{ borderRight: "none" }} />
                                             <input
                                                 type="text"
                                                 className="form-control"
                                                 id="danaDiajukan"
                                                 aria-describedby="emailHelp"
                                                 placeholder="0"
-                                                name="danaDiajukan"
-                                                value={inputValues.danaDiajukan}
                                                 onChange={handleInputChange}
+                                                value={inputValues.dana}
                                             />
+
                                         </div>
                                     </div>
+
+
                                 </form>
                             </div>
 
@@ -166,6 +251,8 @@ export default function AddCampaign() {
                                 <h2 className="dd">
                                     <DragDropFiles handleImageSelect={handleImageSelect} />
                                 </h2>
+
+
                                 <div className="inisiator">
                                     <h2>Inisiator</h2>
                                     <h3>
@@ -173,32 +260,15 @@ export default function AddCampaign() {
                                         <p>Administrator</p>
                                     </h3>
                                 </div>
+
                             </div>
                         </div>
+
                     </div>
                 </div>
             </form>
 
-            <Modal
-    showPopup={showPopup}
-    inputValues={inputValues}
-    togglePopup={togglePopup}
-    handleApprovalStatusChange={handleApprovalStatusChange}
-    handlePopupClose={handlePopupClose}
-    approvalStatus={approvalStatus}
-    gambarSampul={inputValues.gambarSampul ? inputValues.gambarSampul : null}
-/>
-
-{
-        showAlert && (
-          <div className='px-5'>
-            <div className='alert alert-success' role='alert'>
-              Well done boss!!!
-            </div>
-          </div>
-        )
-      }
-
+            {/* POP UP */}
         </div>
     );
 }

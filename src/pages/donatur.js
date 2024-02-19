@@ -2,19 +2,19 @@ import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import "../css/donatur.css";
 
-
 export default function Donatur() {
-
   const [showPopup, setShowPopup] = useState(false); // State untuk menentukan kapan pop-up ditampilkan
   const [selectedDonatur, setSelectedDonatur] = useState(null); // State untuk menyimpan data donatur yang dipilih
+  const [statusDonatur, setStatusDonatur] = useState('semua');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [searchMode, setSearchMode] = useState(false);
 
   // Data donatur untuk contoh
-  const donaturData = [
-    { id: 1, tanggalTransaksi: "01 Okt 2023 08:43:04 WIB", nama: "Ahmad Alamsyah Rauf", rekening: "0495285835", donasi: "Rp750.000", bank: <img src="../../assets/bni.svg"></img>, namaBank: "BNI (Bank Negara Indonesia)" },
-
-    { id: 2, tanggalTransaksi: "29 Nov 2023 15:23:20 WIB", nama: "M. Fajrul Falah", rekening: "0011555510", donasi: "Rp500.000", bank: <img src="../../assets/bca.svg"></img>, namaBank: "BCA (Bank Central Asia)" },
-
-    { id: 3, tanggalTransaksi: "29 Nov 2023 11:56:35 WIB", nama: "Lintang Ayu Permata", rekening: "7134559788", donasi: "Rp300.000", bank: <img src="../../assets/bsi.svg"></img> , namaBank: "BSI (Bank Syariah Indonesia)"}
+  const daftarDonatur = [
+    { transaksi: "01 Okt 2023 08:43:04 WIB", donatur: "Ahmad Alamsyah Rauf", rekening: "0495285835", uang: "Rp750.000", bank: "../../assets/bni.svg" },
+    { transaksi: "29 Nov 2023 15:23:20 WIB", donatur: "M. Fajrul Falah", rekening: "0011555510", uang: "Rp500.000", bank: "../../assets/bca.svg" },
+    { transaksi: "29 Nov 2023 11:56:35 WIB", donatur: "Lintang Ayu Permata", rekening: "7134559788", uang: "Rp300.000", bank: "../../assets/bsi.svg" },
+    // Tambahkan donatur lainnya di sini
   ];
 
   // Fungsi untuk menampilkan pop-up dan menyimpan data donatur yang dipilih
@@ -22,6 +22,35 @@ export default function Donatur() {
     setSelectedDonatur(donaturData);
     setShowPopup(true);
   };
+
+  const handleStatusDonaturClick = (status) => {
+    setStatusDonatur(status);
+  };
+
+  const handleSearchClick = () => {
+    setSearchMode(true);
+  };
+
+  const handleSearchChange = (event) => {
+    setSearchQuery(event.target.value);
+  };
+
+  const handleSearchSubmit = (event) => {
+    event.preventDefault();
+    // Perform search logic here
+    console.log('Search Query:', searchQuery);
+  };
+
+  const filteredDonatur = daftarDonatur.filter((donatur) => {
+    // Filter based on search query
+    return (
+      (donatur.donatur && donatur.donatur.toLowerCase().includes(searchQuery.toLowerCase())) ||
+      (donatur.transaksi && donatur.transaksi.toLowerCase().includes(searchQuery.toLowerCase())) ||
+      (donatur.rekening && donatur.rekening.toLowerCase().includes(searchQuery.toLowerCase())) ||
+      (donatur.uang && donatur.uang.toLowerCase().includes(searchQuery.toLowerCase())) ||
+      (donatur.bank && donatur.bank.toLowerCase().includes(searchQuery.toLowerCase()))
+    );
+  });
 
   return (
     <div className="content">
@@ -36,26 +65,40 @@ export default function Donatur() {
           <div className="table-container-berita">
             <table className="table custom-table" style={{ width: "100%" }}>
               <thead>
-                <div className="mb-0" style={{ width: "100%" }}>
-                  <div
-                    className="d-flex justify-content-end"
-                    style={{ width: "900%" }}
-                  >
-                    <Button
-                      variant="outline-success fs-6 fw-semibold text-black"
-                      className="berita-btn"
-                      style={{ paddingLeft: "0px", marginBottom: "50px" }}
-                    >
-                      <img
-                        className="ms-2"
-                        src="../assets/filter.png"
-                        alt="Search"
-                        style={{ paddingLeft: "0px" }}
-                      />
-                      Filter
-                    </Button>
-                  </div>
-                </div>
+                <tr className="mb-0" style={{ width: "100%" }}>
+                <th colSpan="7" style={{textAlign: "end", height: "76px", verticalAlign: "middle"}}>
+
+
+
+                    {!searchMode ? (
+                     <Button
+                     variant="outline-success-none fw-semibold text-black"
+                     className="search-berita"
+                     onClick={handleSearchClick}
+                     style={{alignItems: "end", display: "flex", justifyContent: "end"}}
+                 >
+                     <img
+                         className="ms-2 search-icon-berita"
+                         src="../assets/filter.png"
+                         alt="Search"
+                     />
+                     Filter
+                 </Button>
+                 
+                    ) : (
+                      <form onSubmit={handleSearchSubmit}>
+                        <input
+                          type="text"
+                          className="form-control search-input"
+                          placeholder="Cari donatur..."
+                          value={searchQuery}
+                          onChange={handleSearchChange}
+                        />
+                        {/* <button type="submit" className="btn btn-primary mt-2">Cari</button> */}
+                      </form>
+                    )}
+                  </th>
+                </tr>
                 <tr className="title">
                   <th
                     scope="col"
@@ -132,17 +175,19 @@ export default function Donatur() {
               </thead>
               <tbody>
                 {/* Data donatur */}
-                {donaturData.map((donatur) => (
+                {filteredDonatur.map((donatur, index) => (
                   <tr
-                    key={donatur.id}
+                    key={index}
                     style={{ fontSize: "14px", color: "#404040" }}
                   >
-                    <td style={{ padding: "1rem", color: "#404040" }}>{donatur.id}</td>
-                    <td style={{ padding: "1rem", color: "#404040" }}>{donatur.tanggalTransaksi}</td>
-                    <td style={{ padding: "1rem", fontWeight: "bold", color: "#404040" }}>{donatur.nama}</td>
-                    <td style={{ padding: "1rem", fontWeight: "bold", color: "#404040" }}>{donatur.bank}</td>
+                    <td style={{ padding: "1rem", color: "#404040" }}>{index + 1}</td>
+                    <td style={{ padding: "1rem", color: "#404040" }}>{donatur.transaksi}</td>
+                    <td style={{ padding: "1rem", fontWeight: "bold", color: "#404040" }}>{donatur.donatur}</td>
+                    <td style={{ padding: "1rem", fontWeight: "bold", color: "#404040" }}>
+                      <img src={donatur.bank} alt="Bank" />
+                    </td>
                     <td style={{ padding: "1rem", fontWeight: "bold", color: "#404040" }}>{donatur.rekening}</td>
-                    <td style={{ padding: "1rem", fontWeight: "bold", color: "#404040" }}>{donatur.donasi}</td>
+                    <td style={{ padding: "1rem", fontWeight: "bold", color: "#404040" }}>{donatur.uang}</td>
                     <td className="eye" style={{ padding: "1rem", textAlign: "end" }}>
                       <p>Lihat</p>
                       <img
@@ -190,12 +235,12 @@ export default function Donatur() {
               <p className="hijau rounded-top"></p>
               <div className="content-popup">
                 <p className="tgl-trans">Tanggal Transaksi</p>
-                <p className="tgl">{selectedDonatur.tanggalTransaksi}</p>
-                <p className="donasi">{selectedDonatur.donasi}</p>
+                <p className="tgl">{selectedDonatur.transaksi}</p>
+                <p className="donasi">{selectedDonatur.uang}</p>
                 <p className="garis"></p>
                 <div className="nama-donatur">
                   <p className="judul-kiri">Donatur</p>
-                  <p className="judul-kanan">{selectedDonatur.nama}</p>
+                  <p className="judul-kanan">{selectedDonatur.donatur}</p>
                 </div>
                 <div className="nama-donatur">
                   <p className="judul-kiri">Transfer melalui</p>
@@ -214,14 +259,12 @@ export default function Donatur() {
                   <p className="judul-kanan">BSI (BANK SYARIAH INDONESIA)</p>
                 </div>
               </div>
-
             </div>
-
             {/* Tampilkan data lainnya */}
-            <Button className="akhir" style={{backgroundColor: "transparent", color: "black", borderColor: "#808080", fontSize: "14px"}} onClick={() => setShowPopup(false)}>
-              <img src="../../assets/arrow.svg" style={{width: "16px"}}></img>
+            <Button className="akhir" style={{backgroundColor: "transparent", color: "black", borderColor: "#808080"}} onClick={() => setShowPopup(false)}>
+              <img className="arrow-back" src="../../assets/arrow.svg" style={{width: "16px"}}></img>
               Kembali
-              </Button>
+            </Button>
           </div>
         </div>
       )}
