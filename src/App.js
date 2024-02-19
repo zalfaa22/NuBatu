@@ -11,6 +11,7 @@ import NderekTanglet from "./pages/nderekTanglet";
 import DetailChat from "./pages/detailChat";
 import Berita from "./pages/konten/berita";
 import AddBerita from "./pages/konten/addBerita";
+import BeritaItem from "./pages/konten/beritaItem";
 import EditBerita from "./pages/konten/editBerita";
 import Artikel from "./pages/konten/artikel";
 import Event from "./pages/konten/event";
@@ -38,6 +39,8 @@ function App() {
           <Route path="/detailChat" element={<DetailChat/>} />
           <Route path="/berita" element={<Berita/>} />
           <Route path="/addBerita" element={<AddBerita/>} />
+          <Route path="/editBerita/:id" element={<AddBerita/>} />
+          <Route path="/beritaItem" element={<BeritaItem/>} />
           <Route path="/editBerita" element={<EditBerita/>} />
           <Route path="/artikel" element={<Artikel/>} />
           <Route path="/event" element={<Event/>} />
