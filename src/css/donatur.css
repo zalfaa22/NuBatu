@@ -102,9 +102,11 @@
     font-size: 14px;
 }
 .akhir{
-    border: 1px solid #BFBFBF;
-    background-color: transparent;
-    margin-top: 20px;
+  margin-top: 20px;
+  font-size: 14px !important;
+}
+.akhir .arrow-back{
+    width: 15px !important;
 }
 
 
@@ -173,10 +175,12 @@
     font-size: 12px;
 }
 .akhir{
-    border: 1px solid #BFBFBF;
-    background-color: transparent;
-    font-size: 10px;
-}
+    margin-top: 20px;
+    font-size: 12px !important;
+  }
+  .akhir .arrow-back{
+      width: 12px !important;
+  }
 
 
 }
@@ -249,10 +253,12 @@
     text-align: end;
 }
 .akhir{
-    border: 1px solid #BFBFBF;
-    background-color: transparent;
-    font-size: 10px;
-}
+    margin-top: 20px;
+    font-size: 10px !important;
+  }
+  .akhir .arrow-back{
+      width: 10px !important;
+  }
 
 
 }

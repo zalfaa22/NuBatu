@@ -1,54 +1,74 @@
   @media (max-width: 1440px){
      .bungkus-grid {
-    padding: 2rem 0;
+      padding: 0;
+      margin-bottom: 0px;
+      margin-top: 20px; 
   }
   
   label.cover-label {
     margin: 0 auto;
-    display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    border: 1px dotted black;
     border-radius: 20px;
-    width: 100%;
-    height: 10rem;
     cursor: pointer;
-    font-size: large;
     text-align: center;
-    padding: 50px;
+    font-size: 14px;
+    width: 100%;
+    height: 260px;
+    display: flex;
+    align-items: center;
+    border: 2px dashed #808080;
+    padding: 10px;
   }
-  
+  .img-grid{
+    width: 40px;
+  }
+  .judul-drag{
+    font-size: 14px;
+  }
+  .browse{
+    font-size: 14px;
+    color: #0047FF;
+    font-weight: bold;
+  }
+  .png{
+    font-size: 12px;
+    color: #808080;
+    font-weight: 600;
+    margin-top: -10px;
+  }
   label span {
-    font-weight: lighter;
-    font-size: small;
     padding-top: 0.5rem;
+    margin-right: 5px;
+    font-weight: bold;
     text-align: center;
+    font-size: 10px;
   }
-  
   .input-grid {
     display: none;
   }
-  
+  .gambar-input{
+    height: 230px;
+    width: 100%;
+    border-radius: 10px;
+  }
   img {
     padding: 0;
     margin: 0;
   }
-  
   .images {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    margin-top: 30px;
   }
-  
   .image {
     margin: 1rem 0.5rem;
     position: relative;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
   }
-  
   .image button {
     position: absolute;
     bottom: 0;
@@ -74,18 +94,14 @@
     display: block;
     margin: 0 auto;
     border: none;
-    border-radius: 20px;
-    width: 10rem;
-    height: 3rem;
+    border-radius: 8px;
+    width: 8rem;
+    height: 2rem;
     color: white;
-    background-color: green;
+    background-color: #078D41;
+    font-size: 10px;
   }
   
-  label.cover-label :hover,
-  .upload-btn:hover {
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
-      rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
-  }
   
   .error {
     text-align: center;
@@ -94,114 +110,514 @@
   .error span {
     color: red;
   }
+
+
+  /* carousel.css */
+.carousel-inner {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  width: 412px;
+  height: 100%;
+  border: 2px solid #09A64D;
+  border-radius: 10px;
+}
+
+.carousel-inner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Menambahkan lapisan atas dengan warna */
+  z-index: 1; /* Pastikan lapisan atas tumpang tindih dengan konten di bawahnya */
+}
+
+  
+  .carousel-item {
+    height: 230px; /* Tetapkan tinggi carousel */
+    width: fit-content; /* Sesuaikan lebar carousel dengan konten */
+  }
+  
+  .carousel-item img {
+    height: 230px; /* Tetapkan tinggi gambar */
+    width: auto; /* Biarkan lebar gambar mengikuti aspek rasio aslinya */
+  }
+  
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 24px;
+  width: 24px;
+  color: white;
+  margin-top: 68px;
+  padding: 10px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  height: 232px; /* Sesuaikan tinggi tombol prev/next */ 
+}
+
+.carousel-control-prev {
+  margin-left: -40px; /* Sesuaikan posisi tombol prev */
+}
+
+.carousel-control-next {
+  margin-right: 425px; /* Sesuaikan posisi tombol next */
+}
+
+.carousel-indicators {
+  bottom: -30px; /* Atur posisi indikator */
+}
+
+.carousel-indicators li {
+  background-color: #fff; /* Atur warna latar belakang indikator */
+  border: 1px solid #000; /* Atur border indikator */
+}
+
+.carousel-indicators .active {
+  background-color: #000; /* Atur warna latar belakang indikator yang aktif */
+}
+
+.move{
+  font-size: 12px;
+  font-weight: 600;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: #BFBFBF;
+  z-index: 10;
+  width: 412px;
+  margin-top: 140px;
+}
+
+.ganti-hapus{
+  display: flex;
+  gap: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  justify-content: end;
+  width: 412px;
+  padding: 10px;
+}
+
+.ganti{
+  border: 2px solid #BFBFBF;
+  border-radius: 10px;
+  font-size: 12px;
+  color: white;
+  width: 63px;
+  height: 32px;
+  left: 0;
+  background-color: transparent;
+  z-index: 10;
+}
+
+.ganti:hover{
+background-color: #404040;
+}
+
+.hapus{
+  border: 2px solid #BFBFBF;
+  border-radius: 10px;
+  font-size: 12px;
+  color: white;
+  width: 78px;
+  height: 32px;
+  left: 0;
+  background-color: transparent;
+  z-index: 10;
+  items-align: center;
+}
+
+.hapus:hover{
+  background-color: #404040;
+  }
+  
   }
  
   
 
   @media (max-width: 768px) {
-    .bungkus-grid{
-      width: 100%;
-    }
-    .image img {
-      width: 170px;
-      height: auto;
-    }
-    label.cover-label  {
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      border: 1px dotted black;
-      border-radius: 20px;
-      width: 200px;
-      cursor: pointer;
-      font-size: large;
-      text-align: center;
-      padding: 15px;
-    }
-    
-    label span {
-      font-weight: lighter;
-      font-size: auto;
-      padding-top: 0.5rem;
-      text-align: center;
-      width: 150px;
-    }
+    .bungkus-grid {
+      padding: 0;
+      margin-bottom: 0px;
+      margin-top: 30px; 
+  }
+  
+  label.cover-label {
+    margin: 0 auto;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 20px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 14px;
+    width: 100%;
+    height: 260px;
+    display: flex;
+    align-items: center;
+    border: 2px dashed #808080;
+    padding: 20px;
+  }
+  .img-grid{
+    width: 40px;
+  }
+  .judul-drag{
+    font-size: 14px;
+  }
+  .browse{
+    font-size: 14px;
+    color: #0047FF;
+    font-weight: bold;
+  }
+  .png{
+    font-size: 12px;
+    color: #808080;
+    font-weight: 600;
+    margin-top: -10px;
+  }
+  .gambar-input{
+    height: 106px;
+    width: 100%;
+    border-radius: 10px;
+  }
+  .images{
+    margin-top: 20px;
+  }
 
-    .judul-drag {
-      margin-right: 5px;
-      font-weight: bold;
-      text-align: center;
-    }
-    
+   /* carousel.css */
+.carousel-inner {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  width: 412px;
+  height: 100%;
+  border: 2px solid #09A64D;
+  border-radius: 10px;
+}
 
-    .upload-btn {
-      cursor: pointer;
-      display: block;
-      margin: 0 auto;
-      border: none;
-      border-radius: 10px;
-      width: 8rem;
-      height: 2rem;
-      color: white;
-      background-color: green;
-      font-size: 10px;
-    }
+.carousel-inner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Menambahkan lapisan atas dengan warna */
+  z-index: 1; /* Pastikan lapisan atas tumpang tindih dengan konten di bawahnya */
+}
+
+  
+  .carousel-item {
+    height: 230px; /* Tetapkan tinggi carousel */
+    width: fit-content; /* Sesuaikan lebar carousel dengan konten */
+  }
+  
+  .carousel-item img {
+    height: 230px; /* Tetapkan tinggi gambar */
+    width: auto; /* Biarkan lebar gambar mengikuti aspek rasio aslinya */
+  }
+  
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 24px;
+  width: 24px;
+  color: white;
+  margin-top: 68px;
+  padding: 10px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  height: 232px; /* Sesuaikan tinggi tombol prev/next */ 
+}
+
+.carousel-control-prev {
+  margin-left: 0px; /* Sesuaikan posisi tombol prev */
+}
+
+.carousel-control-next {
+  margin-right: 0px; /* Sesuaikan posisi tombol next */
+}
+
+.carousel-indicators {
+  bottom: -30px; /* Atur posisi indikator */
+}
+
+.carousel-indicators li {
+  background-color: #fff; /* Atur warna latar belakang indikator */
+  border: 1px solid #000; /* Atur border indikator */
+}
+
+.carousel-indicators .active {
+  background-color: #000; /* Atur warna latar belakang indikator yang aktif */
+}
+
+.move{
+  font-size: 12px;
+  font-weight: 600;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: #BFBFBF;
+  z-index: 10;
+  width: 412px;
+  margin-top: 140px;
+}
+
+.ganti-hapus{
+  display: flex;
+  gap: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  justify-content: end;
+  width: 412px;
+  padding: 10px;
+}
+
+.ganti{
+  border: 2px solid #BFBFBF;
+  border-radius: 10px;
+  font-size: 12px;
+  color: white;
+  width: 63px;
+  height: 32px;
+  left: 0;
+  background-color: transparent;
+  z-index: 10;
+}
+
+.ganti:hover{
+background-color: #404040;
+}
+
+.hapus{
+  border: 2px solid #BFBFBF;
+  border-radius: 10px;
+  font-size: 12px;
+  color: white;
+  width: 78px;
+  height: 32px;
+  left: 0;
+  background-color: transparent;
+  z-index: 10;
+  items-align: center;
+}
+
+.hapus:hover{
+  background-color: #404040;
+  }
 
   }
 
 
 
   @media (max-width: 320px) {
-    .bungkus-grid{
-      width: 80%;
-    }
-    .image img {
-      width: 170px;
-      height: auto;
-    }
-    label.cover-label  {
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      border: 1px dotted black;
-      border-radius: 20px;
-      width: 100px;
-      cursor: pointer;
-      font-size: large;
-      text-align: center;
-      
-    }
-    
-    label span {
-      font-weight: lighter;
-      font-size: auto;
-      padding-top: 0.5rem;
-      text-align: center;
-      width: 150px;
-    }
+    .bungkus-grid {
+      padding: 0;
+      margin-bottom: 0px;
+      margin-top: 20px; 
+      width: fit-content;
+  }
+  
+  label.cover-label {
+    margin: 0 auto;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 14px;
+    width: fit-content;
+    height: 260px;
+    display: flex;
+    align-items: center;
+    border: 2px dashed #808080;
+    padding: 10px;
+  }
+  .img-grid{
+    width: 30px;
+  }
+  .judul-drag{
+    font-size: 12px;
+    width: 50px;
+  }
+  .browse{
+    font-size: 12px;
+    color: #0047FF;
+    font-weight: bold;
+  }
+  .png{
+    font-size: 10px;
+    color: #808080;
+    font-weight: 600;
+    margin-top: -10px;
+    width: 150px;
+  }
+  /* .gambar-input{
+    height: 100%;
+    width: 100%;
+  } */
+  .gambar-input{
+    border-radius: 10px;
+    height: auto;
+    width: 100%;
+  }
 
-    .judul-drag {
-      margin-right: 5px;
-      font-weight: bold;
-      text-align: center;
-    }
-    
+  .images {
+   display: inline;
+    align-items: center;
+    margin-top: 30px;
+    width: 100%;
+    height: 100%;
+  }
 
-    .upload-btn {
-      cursor: pointer;
-      display: block;
-      margin: 0 auto;
-      border: none;
-      border-radius: 10px;
-      width: 8rem;
-      height: 2rem;
-      color: white;
-      background-color: green;
-      font-size: 10px;
-    }
+  .image{
+    width: fit-content;;
+  }
 
+   /* carousel.css */
+.carousel-inner {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #09A64D;
+  border-radius: 10px;
+}
+
+.carousel-inner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Menambahkan lapisan atas dengan warna */
+  z-index: 1; /* Pastikan lapisan atas tumpang tindih dengan konten di bawahnya */
+}
+
+  
+  .carousel-item {
+    height: 100%; /* Tetapkan tinggi carousel */
+    width: fit-content; /* Sesuaikan lebar carousel dengan konten */
+  }
+  
+  .carousel-item img {
+    height: 100px; /* Tetapkan tinggi gambar */
+    width: auto; /* Biarkan lebar gambar mengikuti aspek rasio aslinya */
+  }
+  
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 8px;
+  width: 8px;
+  color: white;
+  margin-top: 68px;
+  padding: 10px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  height: 50px; /* Sesuaikan tinggi tombol prev/next */ 
+}
+
+.carousel-control-prev {
+  margin-left: 0px; /* Sesuaikan posisi tombol prev */
+}
+
+.carousel-control-next {
+  margin-right: 0px; /* Sesuaikan posisi tombol next */
+}
+
+.carousel-indicators {
+  bottom: -30px; /* Atur posisi indikator */
+}
+
+.carousel-indicators li {
+  background-color: #fff; /* Atur warna latar belakang indikator */
+  border: 1px solid #000; /* Atur border indikator */
+}
+
+.carousel-indicators .active {
+  background-color: #000; /* Atur warna latar belakang indikator yang aktif */
+}
+
+.move{
+  font-size: 10px;
+  font-weight: 600;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: #BFBFBF;
+  z-index: 10;
+  width: auto;
+  margin-top: 50px;
+}
+
+.ganti-hapus{
+  display: flex;
+  gap: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  justify-content: end;
+  width: auto;
+  padding: 10px;
+}
+
+.ganti{
+  border: 1.5px solid #BFBFBF;
+  border-radius: 5px;
+  font-size: 8px;
+  color: white;
+  width: 50px;
+  height: 20px;
+  left: 0;
+  background-color: transparent;
+  z-index: 10;
+}
+
+.ganti:hover{
+background-color: #404040;
+}
+
+.hapus{
+  border: 1.5px solid #BFBFBF;
+  border-radius: 5px;
+  font-size: 8px;
+  color: white;
+  width: 50px;
+  height: 20px;
+  left: 0;
+  background-color: transparent;
+  z-index: 10;
+  items-align: center;
+  gap: 10px;
+}
+
+.trash{
+  width: 10px;
+}
+
+.hapus:hover{
+  background-color: #404040;
+  }
   }

@@ -5,10 +5,10 @@ export default function DetailChat() {
   return (
     <div className="content">
       <div className="bungkus-chat">
-        <div className="arrow">
-          <img src="../../assets/arrow.svg"></img>
-          <p>Kembali</p>
-        </div>
+        <a href="/nderekTanglet" className="arrow" style={{textDecoration: "none", color: "black"}}>
+          <img className="arrow-left" src="../../assets/arrow.svg"></img>
+          <p className="ngiri">Kembali</p>
+        </a>
 
         {/* putih */}
         <div className="bungkus-ziyad">
@@ -32,15 +32,15 @@ export default function DetailChat() {
 
           {/* form */}
           <div class="pt-lg-5 pt-md-4 pt-3">
-            <label for="exampleFormControlInput1" class="form-label">
+            <label for="exampleFormControlInput1" class="form-label judul-jawab">
               Dijawab oleh
             </label>
             <input
               type="email"
-              class="form-control"
+              class="form-control small-font"
               id="exampleFormControlInput1"
               placeholder="Nama Kyai/Ust/Habib"
-              // style={{fontSize: "10px"}}
+              style={{fontSize: "16px"}}
             />
           </div>
           <div className="jawaban" style={{ position: "relative" }}>

@@ -37,17 +37,17 @@ const DragDropFiles = ({ handleImageSelect }) => {
     });
   };
 
-  const containerStyle = {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: '40px',
-    height: '260px',
-    textAlign: 'center',
-    width: "100%",
-    backgroundColor: "#F6FFF9",
-  };
+  // const containerStyle = {
+  //   display: 'flex',
+  //   flexDirection: 'column',
+  //   alignItems: 'center',
+  //   justifyContent: 'center',
+  //   padding: '40px',
+  //   height: '260px',
+  //   textAlign: 'center',
+  //   width: "100%",
+  //   backgroundColor: "#F6FFF9",
+  // };
 
   if (files) {
     return (
@@ -63,7 +63,7 @@ const DragDropFiles = ({ handleImageSelect }) => {
               key={idx}
               src={preview}
               alt={`Preview ${idx}`}
-              style={{ maxWidth: '410px', height: 'auto' }}
+              style={{ maxWidth: '410px', height: 'auto', alignItems: 'start' }}
             />
           ))}
         </div>
@@ -80,21 +80,20 @@ const DragDropFiles = ({ handleImageSelect }) => {
         className="dropzone"
         onDragOver={handleDragOver}
         onDrop={handleDrop}
-        style={containerStyle}
+        // style={containerStyle}
       >
         <div>
-          <img src="../../assets/gallery.svg" alt="Gallery" />
-          <h1 style={{ fontSize: '14px', fontWeight: 'bold', textAlign: 'center' }}>
+          <img className="img-galeri" src="../../assets/gallery.svg" alt="Gallery" />
+          <h1 className="judul-upload">
             Drag & drop image to upload, or{' '}
             <span
-              style={{ color: '#0047FF', marginLeft: '5px', cursor: "pointer" }}
               onClick={() => inputRef.current.click()}
             >
               browse
             </span>
           </h1>
-          <h2 style={{ fontSize: '12px', color: '#808080', textAlign: 'center' }}>
-            1208x840px size required in PNG or JPG format only, maximum 5MB.
+          <h2 className="format">
+          800x600px size required in PNG or JPG format only.
           </h2>
           <input
             type="file"
